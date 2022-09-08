@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .flex-container {
+            display: flex;
+            align-content: space-around;
+            width: 400px;
+            height: 100px;
+            background-color: grey;
+        }
+
+        .flex-item {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            border: black 1px solid;
+            border-radius: 10px;
+        }
+
+        .flex-content {
+            width: 400px;
+            height: 150px;
+            background-color: grey;
+        }
+
+        .flex-con {
+            display: none;
+            font-size: 20px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 100;
+            padding: 12px;
+        }
+
+        .flex-item:hover {
+            background-color: pink;
+        } 
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="flex-item">商品介绍</div>
+        <div class="flex-item">规格与包装</div>
+        <div class="flex-item">售后保障</div>
+        <div class="flex-item">商品评价</div>
+    </div>
+    <div class="flex-content">
+        <div class="flex-con" style="display: block;">商品介绍</div>
+        <div class="flex-con">规格与包装</div>
+        <div class="flex-con" >售后保障</div>
+        <div class="flex-con" >商品评价</div>
+    </div>
+
+    <script>
+        var items = document.querySelectorAll(".flex-item")
+        var cons = document.querySelectorAll(".flex-con")
+        for(var i=0; i<items.length; i++){
+            // 自定义属性
+            items[i].setAttribute("data-index",i)
+            items[i].onclick = function(){
+                // 排他思想
+                for (var j=0; j<items.length; j++){
+                    cons[j].style.display = "none";
+                }
+                var index = this.getAttribute("data-index");
+                cons[index].style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

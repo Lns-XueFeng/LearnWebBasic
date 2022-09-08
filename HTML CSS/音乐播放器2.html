@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .contanier {
+            width: 60%;
+            height: 550px;
+            margin: 100px auto;
+            border: 1px solid rgb(181, 136, 79);
+            background-color: rgb(236, 225, 209);
+        }
+        
+        .left {
+            float: left;
+            width: 40%;
+            margin: 30px;
+        }
+        
+        .left_top {
+            text-align: center;
+        }
+        
+        .left_bottom {
+            margin-top: 10px;
+            height: 160px;
+            line-height: 30px;
+            text-align: center;
+        }
+        
+        .left_bottom>ul>li {
+            font-size: 16px;
+        }
+        
+        a {
+            color: rgb(181, 136, 79);
+            text-decoration: none;
+            /* 连接底部的样式，默认是underline */
+        }
+        
+        .right {
+            width: 50%;
+            float: left;
+            text-align: center;
+            margin: 25px auto;
+            height: 500px;
+            line-height: 30px;
+            text-align: center;
+        }
+        
+        ul>li {
+            text-align: center;
+            font-size: 16px;
+        }
+        
+        audio:focus {
+            outline: none;
+        }
+        
+        input {
+            width: 90%;
+            height: 40px;
+            text-align: center;
+            font-size: 18px;
+            background-color: rgb(255, 199, 126);
+            border: 0;
+            /* 取消难看的边框 */
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 1px 1px #ccc;
+        }
+        
+        input:focus {
+            outline: none;
+            /* 去掉点击时候的外边框 */
+        }
+    </style>
+</head>
+<body>
+    <div class="contanier">
+        <div class="left">
+            <div class="left_top">
+                <a href="https://baike.baidu.com/item/%E9%98%BF%E8%82%86/5857519" target="_self"><img src="images\author.png" width="100%" height="340px" title="阿肆,郭采洁海报"></a>
+            </div>
+            <div class="left_bottom">
+                <ul type="none">
+
+                    <li><a href="https://baike.baidu.com/item/%E9%98%BF%E8%82%86/5857519 " target="_self">作者：阿肆</a></li>
+                    <li><a href="http://www.yue365.com/getgeci/17091/403730.shtml" target="_self">歌&nbsp;&nbsp;&nbsp;&nbsp;词</a></li>
+                    <li style="margin-bottom:10px;"><a href="mv.html" target="_self">播放MV</a></li>
+                    <li> <audio id="audio" src="./musics/回忆的沙漏.mp3" autoplay></audio></li>
+                    <input id="btn" value="播           放" readonly="readonly"></input>
+
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <marquee id="marquee" float="left" width="350x" height="500px" direction="up" scrollamount="1" this.stop()>
+                <font face="heiti" size="4" color="black">
+                    <ul type="none">
+                        <li>世界上另一个我（Live） - 许凯&白鹿</li>
+
+                        <li>作词：阿肆 作曲：阿肆</li>
+
+                        <li style="padding-top:20px">上一秒我在台北看烟火</li>
+
+                        <li>下一秒你在上海喝Mojito</li>
+
+                        <li>你感觉我就像我感觉你</li>
+
+                        <li>世界上的另一个我</li>
+
+                        <li>上一秒我在柏林落大雨</li>
+
+                        <li>下一秒你在曼谷天气晴</li>
+
+                        <li>你感受我就像我感受你</li>
+
+                        <li>世界上的另一个我</li>
+
+                        <li>人生到处是假正经</li>
+
+                        <li>变幻莫测捕风捉影</li>
+
+                        <li>有几个陪我等雨停</li>
+
+                        <li>难得真性情</li>
+
+                        <li>天高海阔我的渊明谁倾听</li>
+
+                        <li>岁月为我大浪淘沙</li>
+
+                        <li>而你被留下</li>
+
+                        <li>我的世界流转变化</li>
+
+                        <li>你却没时差</li>
+
+                        <li>啦啦啦啦我亲爱的你呀</li>
+
+                        <li>岁月待我晴雨交加</li>
+
+                        <li>而你被孵化</li>
+
+                        <li>我的心事纷乱复杂</li>
+
+                        <li>你却能解码</li>
+
+                        <li>啦啦啦啦我亲爱的你呀</li>
+
+                        <li>我们并非单枪匹马</li>
+
+                        <li>世界那么大</li>
+
+                        <li>风尘仆仆我会化作</li>
+
+                        <li>天边的晚霞</li>
+
+                        <li>啦啦啦啦我与你同在啊</li>
+
+                        <li>啦啦啦啦我与你同在啊</li>
+
+                        <li>啦啦啦啦我与你同在啊</li>
+                    </ul>
+                </font>
+            </marquee>
+        </div>
+    </div>
+
+    <script language="javascript" type="text/javascript">
+        var music = document.getElementById('audio');
+        var marquee1 = document.getElementById('marquee');
+        var btn = document.getElementById('btn');
+        btn.onclick = function() {
+            if (music.paused) {
+                music.play();
+                marquee1.start();
+                btn.value = "暂           停";
+                btn.style.background = 'rgb(248, 186, 104)';
+
+
+            } else {
+                marquee1.stop();
+                music.pause();
+                btn.value = "播           放";
+                btn.style.background = 'rgb(255, 199, 126)';
+
+                
+            }
+        };
+    </script>
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+/* 清除默认外边距和内边距 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 原来要想让接下来的盒子按百分比来设置，需要html和body一起先设置宽和高100% */
+html,body {
+    width: 100%;
+    height: 100%;
+    background-color: pink;
+    float: left;
+    overflow: hidden;
+}
+
+.searchdiv {
+    width: 100%;
+    height: 8%;
+    /* background-color: pink; */
+    float: left;
+    padding: 16px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.leftdiv {
+    width: auto;
+    height: auto;
+    /* background-color: #fff; */
+    float: left;
+    padding-left: 32px;
+    font-size: 24px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.rightdiv {
+    width: auto;
+    height: auto;
+    /* background: #fff; */
+    float: right;
+    padding-right: 32px;
+    font-size: 24px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(60, 65, 65);
+}
+
+.maindiv {
+    width: 100%;
+    height: 80%;
+    /* background-color: blue; */
+    float: left;
+}
+
+.copyright {
+    width: 100%;
+    height: 12%;
+    /* background-color: red; */
+    border: 1px solid black;
+    float: left;
+}

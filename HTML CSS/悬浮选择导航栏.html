@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            list-style: none;
+            display: none;
+            height: 80px;
+            line-height: 65px;
+            background-color: pink;
+            padding: 5px;
+            border-left: solid 2px;
+            border-right: solid 2px;
+            border-bottom: solid 2px;
+            box-sizing: border-box;
+        }
+
+        li:nth-child(2) {
+            border-top: solid 2px;
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+            font-size: 30px;
+            text-align: center;
+            color: black;
+        }
+
+        .bord {
+            display: flex;
+            width: 100%;
+            text-align: center;
+        }
+
+        .bord:first-child {
+            border-left: solid 2px;
+        }
+
+        .navi {
+            width: 20%;
+            height: 74px;
+            line-height: 65px;
+            background-color: pink;
+            padding: 5px;
+            border-right: solid 2px;
+            border-top: solid 2px;
+            border-bottom: solid 2px;
+            box-sizing: border-box;
+        }
+
+        .navi:hover {
+            background-color: red;
+        }
+
+        .navi:hover li {
+            display: block;
+        }
+
+        li:hover {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="bord">
+        <div class="navi"><a href="#">导航栏</a>
+            <li><a href="#">下拉菜单</a></li>
+            <li><a href="#">下拉菜单</a></li>
+            <li><a href="#">下拉菜单</a></li>
+            <li><a href="#">下拉菜单</a></li>
+            <li><a href="#">下拉菜单</a></li>
+        </div>
+        <div class="navi"><a href="#">导航栏</a>
+            <li><a href="#">下拉菜单</a></li>
+            <li><a href="#">下拉菜单</a></li>
+            <li><a href="#">下拉菜单</a></li>
+            <li><a href="#">下拉菜单</a></li>
+            <li><a href="#">下拉菜单</a></li>
+        </div>
+        <div class="navi"><a href="#">导航栏</a>
+            <li><a href="#">下拉菜单</a></li>
+            <li><a href="#">下拉菜单</a></li>
+            <li><a href="#">下拉菜单</a></li>
+            <li><a href="#">下拉菜单</a></li>
+            <li><a href="#">下拉菜单</a></li>
+        </div>
+        <div class="navi"><a href="#">导航栏</a>
+            <li><a href="#">下拉菜单</a></li>
+            <li><a href="#">下拉菜单</a></li>
+            <li><a href="#">下拉菜单</a></li>
+            <li><a href="#">下拉菜单</a></li>
+            <li><a href="#">下拉菜单</a></li>
+        </div>
+        <div class="navi"><a href="#">导航栏</a>
+            <li><a href="#">下拉菜单</a></li>
+            <li><a href="#">下拉菜单</a></li>
+            <li><a href="#">下拉菜单</a></li>
+            <li><a href="#">下拉菜单</a></li>
+            <li><a href="#">下拉菜单</a></li>
+        </div>
+    </div>
+</body>
+</html>

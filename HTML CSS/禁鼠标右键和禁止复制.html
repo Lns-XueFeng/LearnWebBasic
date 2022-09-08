@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    禁止复制，不让被复制走。
+    <script>
+        document.addEventListener('contextmenu', function(e){
+            e.preventDefault();   // 禁止右键菜单
+
+        })
+
+        document.addEventListener('selectstart', function(e){
+            e.preventDefault;
+        })
+
+        // 屏蔽复制操作
+		document.oncopy = function(event) {
+			if (window.event) {
+				event = window.event;
+			}
+			try {
+				var the = event.srcElement;
+				if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")) {
+					return false;
+				}
+				return true;
+			} catch (e) {
+				return false;
+			}
+		}
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.left-border {
+    width: 20%;
+    height: 100%;
+    background: pink;
+    border: 3px black solid;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+}
+
+.right-border {
+    width: 80%;
+    height: 100%;
+    background-color: pink;
+    border-top: 3px black solid;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.top-area {
+    width: 100%;
+    height: 20%;
+    background-color: pink;
+    border-bottom: solid black 3px;
+    display: flex;
+    overflow-x: scroll;
+}
+
+.bottom-area {
+    width: 100%;
+    height: 80%;
+    background-color: pink;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    overflow: scroll;
+}
+
+.flex-item {
+    width: 100px;
+    height: 100px;
+    background: lightpink;
+    border: 3px black solid;
+    margin: 10px;
+    box-sizing: border-box;
+    box-sizing: content-box;
+}
+
+.flex-object {
+    width: 90%;
+    height: 10%;
+    background-color: lightpink;
+    border: 3px black solid;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin: 10px;
+}
+
+.flex-top {
+    width: 20%;
+    height: 90%;
+    background-color: lightpink;
+    border: 3px black solid;
+    box-sizing: border-box;
+    margin: 10px;
+}
