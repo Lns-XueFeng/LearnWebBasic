@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 列表：无序列表 有序列表 自定义列表 -->
+
+    <!-- 无序列表：ul 注意：ul只能包裹li标签，li中可以放任一标签 -->
+    <!-- 其默认显示效果为一小黑点接内容，未来可用css美化 -->
+    <ul>
+        <li>数学</li>
+        <li>语文</li>
+        <li>英语</li>
+    </ul>
+
+    <!-- 有序列表：ol 注意：ol只能包裹li标签，li中可以放任一标签  -->
+    <!-- 其默认显示效果为用123456...来顺序标记，同样的未来可用css美化 -->
+    <ol>
+        <li>数学</li>
+        <li>语文</li>
+        <li>英语</li>
+    </ol>
+
+    <!-- 自定义列表：dl包裹dt以及dd，dt表示自定义列表的主题，dd表示自定义列表针对主题的每一项内容 -->
+    <!-- dl只能包含dt dd，dt dd任意标签都能放 -->
+    <!-- 其默认显示特点为主题内容会缩进，将来可css美化 -->
+    <dl>
+        <dt>Python</dt>
+        <dd>爬虫</dd>
+        <dd>自动化</dd>
+        <dd>数据分析</dd>
+        <dd>......</dd>
+    </dl>
+
+
+    <!-- 表格：table只能包含tr td，tr为行用于包含td td为列，先行后列，tr包含td -->
+    <!-- 表格属性：border-边框宽度 width-表格宽度 height-表格高度 实际开发时用css美化 -->
+    <table border="1" width="400" height="200">
+        <tr>
+            <td>C</td>
+            <td>游戏</td>
+            <td>操作系统</td>
+            <td>...</td>
+        </tr>
+        <tr>
+            <td>Python</td>
+            <td>爬虫</td>
+            <td>自动化</td>
+            <td>数据分析</td>
+        </tr>
+        <tr>
+            <td>JavaScript</td>
+            <td>交互</td>
+            <td>逆向</td>
+            <td>自动化</td>
+        </tr>
+    </table>
+
+    <!-- 表格标题和表头单元格标签 caption th -->
+    <!-- caption写在table内部，th用于替换td以显示出表头单元格 -->
+    <table>
+        <caption>编程语言</caption>
+        <tr>
+            <th>编程语言</th>
+            <th>方向1</th>
+            <th>方向2</th>
+            <th>方向3</th>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>游戏</td>
+            <td>操作系统</td>
+            <td>...</td>
+        </tr>
+        <tr>
+            <td>Python</td>
+            <td>爬虫</td>
+            <td>自动化</td>
+            <td>数据分析</td>
+        </tr>
+        <tr>
+            <td>JavaScript</td>
+            <td>交互</td>
+            <td>逆向</td>
+            <td>自动化</td>
+        </tr>
+    </table>
+
+    <!-- 另一种表格：更易读的表示：table thead tbody tfoot -->
+    <table>
+        <caption>编程语言</caption>
+        <thead>
+            <tr>
+                <th>编程语言</th>
+                <th>方向1</th>
+                <th>方向2</th>
+                <th>方向3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>C</td>
+                <td>游戏</td>
+                <td>操作系统</td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <td>Python</td>
+                <td>爬虫</td>
+                <td>自动化</td>
+                <td>数据分析</td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>交互</td>
+                <td>逆向</td>
+                <td>自动化</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>......</th>
+                <th>......</th>
+                <th>......</th>
+                <th>......</th>
+            </tr>
+        </tfoot>
+    </table>
+
+
+    <!-- 表单： -->
+</body>
+</html>

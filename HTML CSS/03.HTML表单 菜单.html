@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 表单：input -->
+    <!-- input标签通过属性值的不同可以开发不同的标签功能和效果 -->
+    <!-- text-文本框 password-密码框 radio-单选框 checkbox-多选框 file-上传文件 submit-提交按钮 reset重置按钮 button-普通按钮 默认无功能 需配合js -->
+    <!-- input：placeholder属性-提示用户信息 -->
+    文本框: <input type="text" placeholder="账号">
+    <br>
+    密码框: <input type="password" placeholder="密码">
+    <br>
+    <!-- 单选框：name-同一组（name值一样）时一组只能选一个，则实现了单选 checked-默认选择 -->
+    单选框: <input type="radio" name="select">男 <input type="radio" name="select" checked>女
+    <br>
+    <!-- 多选框：checked也可 -->
+    多选框: <input type="checkbox" checked>
+    <br>
+    <!-- 上传文件：multiple-可上传多个文件 -->
+    上传文件: <input type="file" multiple>
+    <br>
+
+    <!-- 表单input系列标签：按钮  例如账号 密码 提交 -->
+    <!-- value-按钮显示名称 -->
+    <!-- action指定处理数据的地址 method数据传输方式 name表单名称 -->
+    <form action="">
+        <input type="text" placeholder="账号">
+        <br>
+        <input type="password" placeholder="密码">
+        <br>
+        <!-- submit可提交账号密码到后台服务器 reset可重置表单信息 button就是等后续配合js -->
+        <!-- 注意：提交，重置等按钮需要和其他输入数据的放在一个form标签中才可功能生效 -->
+        <input type="submit" value="登陆">   
+        <input type="reset" value="重新输入">
+        <input type="button" value="普通按钮">
+    </form>
+    <!-- action与method例子 -->
+    <form action="http://127.0.0.1:8080/" method="GET">
+        姓名: <input type="text" name="name">
+        <input type="submit">
+    </form>
+    <!-- 
+        input标签不同的type类型表示不同功能的按钮
+
+        button	    定义可点击按钮（多数情况下，用于通过 JavaScript 启动脚本）
+        checkbox	定义复选框，即：多选框，在一组多选中，要求它们必须拥有相同的 name
+        file	    定义输入字段和 “浏览” 按钮，供文件上传
+        hidden	    定义隐藏的输入字段
+        image	    定义图像形式的提交按钮
+        password	定义密码字段，该字段中的字符被掩码
+        radio	    定义单选按钮，在一组单选按钮中，要求它们必须拥有相同的 name
+        reset	    定义重置按钮，重置按钮会清除表单中的所有数据
+        submit	    定义提交按钮，提交按钮会把表单数据发送到服务器
+        text	    定义单行的输入字段，用户可在其中输入文本，默认宽度为 20 个字符
+     -->
+
+
+    <!-- 菜单：select -->
+    <!-- 下拉菜单：selsect标签-下拉菜单的整体 option-下拉菜单中的每一项 selected默认选中-->
+    <select>
+        <option value="厦门" selected></option>
+        <option value="福州"></option>
+        <option value="泉州"></option>
+    </select>
+
+    <!-- 文本域标签：textarea：cols-可见宽度 rows-可见高度 -->
+    <textarea cols="30" rows="10"></textarea>
+    <!-- 如果要禁止拉伸文本框大小，则：style="resize: none" -->
+
+    <!-- label标签：label-for与id一致 -->
+    <!-- <label> 标签用于绑定一个表单元素，当点击 <label> 标签内的文本时，浏览器就会自动将焦点（光标）转到或者选择对应的表单元素上，用来增加用户体验。 -->
+    <!-- label将文字与单选框联系或组合到一起，实现点击文字同样可以选中 -->
+    <!-- 第一种实现：将input中的id与label中的for值设置成一样的，第二种实现：用label包裹input和文字 -->
+    <input type="radio" naem="sex" id="nan"> <label for="nan">男</label>
+    <label><input type="radio" name="sex">女</label> 
+</body>
+</html>
+
+<!-- 
+    注: 有三个名字非常相似的标签：
+
+    表单域 form 使用场景：提交区域内表单元素给后台服务器
+    文件域 file 是 input type 属性值 使用场景：上传文件
+    文本域 textarea 使用场景：可以输入多行文字，比如：留言板、网站介绍等……
+    input textarea button select等写在form表单内，数据才可传送到服务器端
+
+    表单中 name 属性的重要性：
+    name 属性用于对提交到服务器后的表单数据进行标识。注意：只有设置了 name 属性的表单元素才能在提交表单时传递它们的值。
+    简单来说，name 就是提交到后台的索引，比如在复选框中都要设置成name="hobby" 说明几个复选框都在 ”爱好“ 下。
+
+    即：表单想要把数据提交到指定的位置，表单控件必须要有 name 属性。
+ -->
+
+<!-- 注意：上面很多标签都没有写name id等属性，那个在css和js时再使用 -->
+<!-- 给表单添加 outline: 0; 或者 outline: none; 样式之后，就可以去掉默认的边框。 -->

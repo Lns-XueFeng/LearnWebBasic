@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>这是网页的标题</title>
+</head>
+<body>
+    <!-- 这是网页的身体。注意:HTML骨架的生成，输入!并回车 -->
+    <!-- command / 快捷键可快速生成注释标签和快速注释某一行 win中是 Ctrl / -->
+    <!-- command D 快捷键可快速一起修改前后标签 -->
+    <h1>h系列标签</h1>
+    <h2>h系列标签</h2>
+    <h3>h系列标签</h3>
+    <h4>h系列标签</h4>
+    <h5>h系列标签</h5>
+    <h6>h系列标签</h6>
+
+    <!-- 段落标签 换行标签 换行水平线-->
+    <p>这是段落</p><br>
+    <p>换行水平线</p><hr>
+
+    <!-- 文本格式化标签 -->
+    <b>加粗</b>
+    <strong>加粗</strong>
+    <u>下划线</u>
+    <ins>下划线</ins>
+    <i>倾斜</i>
+    <em>倾斜</em>
+    <s>删除线</s>
+    <del>删除线</del>
+
+    <!-- 媒体标签 img audio video-->
+    <!-- 宽度和高度属性写一个就行，等比例缩放图片不易变形 -->
+    <!-- controls 显示音频控件 autoplay 自动播放 loop循环播放 -->
+    <!-- 谷歌浏览器可以让视频浏览器自动播放，但是需要再加一个 muted -->
+    <img src="./错的图片路径会无法显示" alt="图片无法显示时的替换文本" title="鼠标悬停在图片上时显示的文本" width="666" height="666"> 
+    <audio src="./音频路径" controls autoplay loop></audio>
+    <video src="./视频路径" controls autoplay muted loop></video>
+
+    <!-- 超链接标签 -->
+    <!-- target默认为_self，会覆盖原网页。将其改为_blank就会另外打开一个网页，不覆盖原网页 -->
+    <a href="https://www.baidu.com" target="_blank">我是超链接:跳转到百度</a>
+    <a href="./1.HTML认知.html">跳转到自己的网页</a>
+    <a href="#">还不知道要跳转到那就输入#表示空链接</a>
+    <a href="javascript:void(0)"></a>
+    <!--  锚点链接：**点击链接，可以快速定位到当前页面中的某个位置
+          在链接文本的 href 属性中，设置属性值的 #名字 的形式，如：<a href="#two">第2集</a> -->
+    <h3 id="anchor">锚点例子</h3> <a href="#anchor">传送</a>
+</body>
+</html>
