@@ -1,0 +1,40 @@
+DOM就是HTML的标准编程接口，通过这些DOM接口来改变网页的内容，结构和样式。
+
+DOM使HTML形成了一个DOM树，包含文档，元素，节点。
+
+DOM的内容:
+    创建: 
+        document.write()
+        innerHTML()
+        createElement()
+    
+    增:
+        appendChild()
+        innertBefore()
+
+    删:
+        removeChild()
+
+    改:
+        1.修改元素属性: src, href, title等
+        2.修改普通元素内容: innerHTML, innerText
+        3.修改表单元素: value, type, disabled等
+        4.修改元素样式: style, className
+    
+    查:
+        1.DOM提供的API老方法...
+        2.H5新增的方法: querySelector, querySelectorAll
+        3.利用节点...
+    
+    属性操作:
+        主要针对于自定义属性
+        1.setAttribute() 新建自定义属性
+        2.getAttribute() 获得自定义属性
+        3.removeAttribute() 删除自定义属性
+    
+    事件操作:
+        onclick
+        onmouseover
+        ...
+        addEventListener
+        ...

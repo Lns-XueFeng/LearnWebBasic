@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // if语句
+        if (true){
+            console.log("条件为真时的输出!");
+        }
+
+        // if-else语句 
+        if (false){
+            console.log("条件为真时的输出!");
+        }
+        else{
+            console.log("条件为假时的输出!");
+        }
+
+        // if...else if...else语句
+        // python是if...elif...else
+        if (false){
+            console.log("条件为真时的输出!");
+        }
+        else if(true){
+            console.log("条件为真时的输出!");
+        }
+        else{
+            console.log("上述条件均假时的输出!");
+        }
+
+
+        // switch语句
+        // case分别匹配特定的情况，default匹配前面所有case都没匹配到的情况
+        var date = new Date().getDay();
+        switch(date){
+            case 0:
+                console.log("今天星期日");
+                break;
+            case 1:
+                console.log("今天星期一");
+                break;
+            case 2:
+                console.log("今天星期二");
+                break;
+            case 3:
+                console.log("今天星期三");
+                break;
+            case 4:
+                console.log("今天星期四");
+                break;
+            case 5:
+                console.log("今天星期五");
+                break;
+            case 6:
+                console.log("今天星期六");
+                break;
+            default:
+                console.log("发生甚么事了?上面的情况都没发生?")
+        }
+
+
+        // for循环 -- 和c语言贼像
+        // 语句 1 （代码块）开始前执行
+        // 语句 2 定义运行循环（代码块）的条件
+        // 语句 3 在循环（代码块）已被执行之后执行
+        for (var i=0; i<5; i++){
+            console.log(i);
+        }
+
+        var i = 0, len = 5;
+        for ( ; i<len; ){
+            console.log(i);
+            i++;
+        }
+
+        // for (...in...){}循环 -- python:for i in person:
+        var x;
+        var txt = "";
+        var person={fname:"Bill",lname:"Gates",age:56}; 
+        for (x in person){
+            txt = txt + person[x];    
+        }
+        console.log(txt);
+
+        
+        // while循环
+        var i = 0;
+        while (i < 3){
+            console.log('注意不要写死循环!!!');
+            i++;  // !!!
+        }
+
+        // do while循环
+        var condition = true;
+        var i = 0;
+        do {
+            if (i == 10){
+                condition = false;
+            }
+            i++;
+        }
+        while (condition);
+
+        // break 语句用于跳出循环。
+        // continue 用于跳过循环中的一个迭代。
+        // 和C和Python差不多
+        // 不同的是 通过标签引用，break 语句可用于跳出任何 JavaScript 代码块
+
+
+        // label 表达式: label 是一个标签，可以使用 break 或 continue /
+        // 使程序跳转到这个标签处执行（执行：break 或 continue），从而改变程序的执行流程。
+        cars = ["BMW","Volvo","Saab","Ford"];
+        list:
+        {
+            document.write(cars[0] + "<br>");
+            document.write(cars[1] + "<br>");
+            document.write(cars[2] + "<br>");
+            break list;
+            document.write(cars[3] + "<br>");
+            document.write(cars[4] + "<br>");
+            document.write(cars[5] + "<br>");
+        }
+       
+
+        // 练习
+        cars = ['lanb', 'niuniu', 'popi', 'uiey'];
+        var i = 0;
+        for (;cars[i];){
+            console.log(cars[i]);
+            i++;
+        }
+
+        var i = 0;
+        while (cars[i]){
+            console.log(cars[i]);
+            i++;
+        }
+        // car[i]超出索引时即为false退出循环!!!
+    </script>
+</body>
+</html>

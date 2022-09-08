@@ -1,0 +1,69 @@
+/* 1.字体的样式 */
+
+p {
+    /* 字体大小/粗细/样式/系列/ */
+    font-size: 30px; 
+    font-weight: 100;
+    font-style: italic;
+    /* 下面是一系列的字体，当用户电脑有第一个字体时就第一个，否则下一个，以此类推，如果都没有，则sans-serif无衬线字体兜底 */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+/* 2.font的复合属性 */
+
+p {
+    /* font: size weight style family; */
+    font: 30px 100 italic 楷体, sans-serif;
+    font-style: normal;
+}
+
+p {
+    /* 基于层叠性：后面的覆盖前面的 */
+    color: blue;
+    color: #000;
+}
+
+
+/* 3.文本的样式 */
+
+p {
+    /* 文本缩进/水平对齐方式/修饰 */
+    text-indent: 2em;
+    text-align: center;
+    text-decoration: blue;
+}
+
+body {
+    /* 图在body中，如需居中，亦可使用text-align -> 内容对其方式 */
+    text-align: center;
+}
+/* text-align 属性只能作用于 块级元素，并让该块级元素内的 行内元素 实现居中（不一定是文字）。 */
+
+/* 如果想让标签(div span h...)-块-居中，需要用 margin: 0 auto; 来实现 */
+/* 只对所选择的标签本身有效 */ 
+
+div {
+    margin: 0 auto;
+}
+
+
+/* 4.文本的修饰 */
+
+p {
+    /* text-decoration: 下划线 删除线 上划线 无装饰线 */
+    text-decoration: underline;
+    text-decoration: line-through;
+    text-decoration: overline;
+    text-decoration: none;
+}
+
+/* line-height 属性用于设置行间的距离（行高），可以控制文字行与行之间的距离。 */
+p {
+    line-height: 16px;
+}
+
+p {
+    /* font: size/line-height weight style family; */
+    font: 30px/1 100 italic 楷体, sans-serif;
+}

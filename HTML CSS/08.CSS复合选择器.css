@@ -1,0 +1,132 @@
+/* 一.复合选择器: 1.后代选择器 2.子代选择器 */
+
+/* 1.后代选择器(空格): 其实就是选择 父级 子级 孙级... 语法: 选择器1 选择器2 ... {} */
+
+div span p {
+    /* 将div中的span中的p中的段落字体的大小改为16px */
+    font-size: 16px;
+}
+
+.div .div1 {
+    /* 不仅标签可用后代选择器，类选择器，id选择器，通配符选择器均可 */
+    font: 1em sans-serif;
+}
+
+
+/* 2.子代选择器(>): 其特点为只选儿子 语法: 父选择器 > 子选择器 {} */
+
+.div > .div1 {
+    /* 不仅类名可用子代选择器，标签选择器，id选择器，通配符选择器均可 */
+    font: 1em sans-serif;
+}
+
+
+/* 二.并集选择器(,): 同时选择多组标签，设置相同的样式 语法: 选择器1 , 选择器2 {} */
+
+.div1 , .div2 , div3 {
+    /* 不仅类名可用子代选择器，标签选择器，id选择器，通配符选择器均可 */
+    font: 1em sans-serif;
+}
+
+
+/* 三.交集选择器(啥也不加直接写一起): 选择既满足条件一又满足条件二的... 语法: 选择器1选择器2 {} 注意: 紧挨着 */
+/* 例如div1名称在多个标签内均有，此时想定位到需要的那个，就可以使用交集选择器 */
+
+div.div1 {
+    font-size: 32px;
+}
+
+
+/* 四.伪类选择器: 选中鼠标悬停在元素上的状态，设置样式 语法: 选择器:hover {} */
+
+/* 用法一: 鼠标悬浮在元素上改变元素样式 */
+a:hover {
+    /* 鼠标悬停在a上时，字体颜色变为粉色，字体变大 */
+    color: pink;
+    font-size: 64px;
+}
+
+/* 用法二: 控制子元素的样式 */
+h1:hover p{
+    background-color: pink;
+}
+
+/* 用法三: 控制兄弟元素的样式 */
+h1:hover+p{
+    background-color: pink;
+}
+
+/* 用法四: 控制就近元素的样式 */
+h1:hover~p{
+    background-color: pink;
+}
+
+/* 注意：要学会触类旁通，这里不只是可以改变颜色，当链接为图片时还可以改图片 */
+/* :link 把没有点击过的（访问过的）链接选出来 */
+a:link {
+    color: #333;
+    text-decoration: none;
+}
+
+/* 2、:visited 选择点击过的（访问过的）链接选出来 */
+a:visited {
+    color: orange;
+}
+
+/* 3、:hover 选择鼠标经过（停留）的那个链接 */
+a:hover {
+    color: skyblue;
+}
+
+/* 4、:active 选择的是我们鼠标正在按下还没有弹起鼠标的那个链接 */
+a:active {
+    color: green;
+}
+
+/* 5、:focus 伪类选择器用于选取获得焦点的表单元素。 */
+input:focus {
+    background-color: pink;
+}
+
+/* 五.结构伪类选择器: */
+
+/* 选择ul中众多li中的第一个 */
+li:first-child {
+    background-color: blue;
+}
+
+/* 选择ul中众多li中的最后一个 */
+li:last-child {
+    background-color: blue;
+}
+
+/* 选择ul中众多li中的第二个 */
+li:nth-child(2) {
+    background-color: blue;
+}
+
+/* 选择ul中众多li中的倒数第二个 */
+li:nth-last-child(2) {
+    background-color: blue;
+}
+
+/* 选择ul中众多li中的4的倍数 */
+li:nth-child(4n) {
+    background-color: rgb(191, 191, 197);
+}
+
+/* 
+    六、属性选择器
+
+    属性选择器可以根据元素特定属性来选择元素。这样就可以不用借助于类或者 id 选择器。
+
+    选择符	         简介
+    E[att]	        选择具有 att 属性的 E 元素
+    E[att="val"]	选择具有 att 属性且属性值等于 val 的 E 元素
+    E[att^="val"]	匹配具有 att 属性且值以 val 开头的 E 元素
+    E[arr$="val"]	匹配具有 att 属性且值以 val 结尾的 E 元素
+    E[att*="val"]	匹配具有 att 属性且值中含有 val 的 E 元素
+*/
+
+
+

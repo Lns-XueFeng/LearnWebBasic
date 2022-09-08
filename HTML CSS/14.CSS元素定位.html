@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /*  
+        1.浮动可以让多个块级盒子一行没有缝隙排列显示， 经常用于横向排列盒子。
+        2.定位则是可以让盒子自由的在某个盒子内移动位置或者固定屏幕中某个位置，并且可以压住其他盒子。 
+
+        定位组成
+        定位：将盒子定在某一个位置，所以定位也是在摆放盒子， 按照定位的方式移动盒子。
+        定位 = 定位模式 + 边偏移
+        定位模式用于指定一个元素在文档中的定位方式
+        边偏移则决定了该元素的最终位置
+
+        （1）定位模式
+
+        定位模式决定元素的定位方式，它通过 CSS 的 position 属性来设置，其值可以分为四个。
+
+        值	        语义
+        static	    静态定位
+        relative	相对定位
+        absolute	绝对定位
+        fixed	    固定定位
+
+        （2）边偏移
+
+        边偏移就是定位的盒子移动的最终位置。有 top、bottom、left 和 right 4 个属性。
+        注意：可以为负值。
+
+        边偏移属性	实例	       描述
+        top	top:  80px	        顶端偏移量，定义元素相对于其父元素上边线的距离
+        bottom	  bottom: 80px	底部偏移量，定义元素相对于其父元素下边线的距离
+        left	  left: 80px	左侧偏移量，定义元素相对于其父元素左边线的距离
+        rigth	  right: 80px	右侧偏移量，定义元素相对于其父元素右边线的距离
+    */
+
+
+    /* 
+        定位: position 其属性值有五个，static relative fixed absolute sticky
+
+        position: static; - HTML 元素的默认值，即没有定位，遵循正常的文档流对象。静态定位的元素不会受到 top, bottom, left, right影响。
+            div.static {
+                position: static;
+                border: 3px solid #73AD21;
+            }
+
+        position: relative; - 相对定位的特点：（务必记住）
+                              它是相对于自己原来的位置来移动的（移动位置的时候参照点是自己原来的位置点）
+                              原来在标准流的位置继续占有，后面的盒子仍然以标准流的方式对待它
+            h2.pos_left
+            {
+                position:relative;
+                left:-20px;
+            }
+
+        *子绝父相: relative是absolute它爹，如果子元素要用absolute，那么父元素就需要用relative。
+
+        position: absolute; - 绝对定位是元素在移动位置的时候相对于它祖先元素来说的定位。
+                              绝对定位的特点：（务必记住）
+                              如果没有祖先元素或者祖先元素没有定位，则以浏览器为准定位（Document 文档）
+                              如果祖先元素有定位（相对、绝对、固定定位），则以最近一级的有定位祖先元素为参考点移动位置
+                              绝对定位不再占有原先的位置（脱标），并且脱标的程度大于浮动（会压住浮动）
+                              所以绝对定位是脱离标准流的。
+
+            用绝对定位,一个元素可以放在页面上的任何位置。标题下面放置距离左边的页面100 px和距离页面的顶部150 px的元素。.
+            h2
+            {
+                position:absolute;
+                left:100px;
+                top:150px;
+            }
+
+        position: fixed; - 元素的位置相对于浏览器窗口是固定位置。即使窗口是滚动的它也不会移动。fixed也是脱标的。
+            p.pos_fixed
+            {
+                position:fixed;
+                top:30px;
+                right:5px;
+            }
+
+        position: sticky; - 基于用户的滚动位置来定位。
+            粘性定位的元素是依赖于用户的滚动，在 position:relative 与 position:fixed 定位之间切换。
+            它的行为就像 position:relative; 而当页面滚动超出目标区域时，它的表现就像 position:fixed;，它会固定在目标位置。
+            元素定位表现为在跨越特定阈值前为相对定位，之后为固定定位。
+            这个特定阈值指的是 top, right, bottom 或 left 之一，换言之，指定 top, right, bottom 或 left 四个阈值其中之一，才可使粘性定位生效。否则其行为与相对定位相同。
+            
+            div.sticky {
+                position: -webkit-sticky;
+                position: sticky;
+                top: 0;
+                background-color: green;
+                border: 2px solid #4CAF50;
+            }
+
+        定位的总结: 
+        定位模式	        是否脱标	        移动位置	      是否常用
+        static 静态定位	    否	               不能使用边偏移	  很少
+        relative 相对定位	否（占有位置）	     相对于自身位置移动	 常用
+        absolute 绝对定位	是（不占有位置）	 带有定位的父级	     常用
+        fixed 固定定位	    是（不占有位置）	 浏览器可视区	    常用
+        sticky 粘性定位	    否（占有位置）	     浏览器可视区	    当前阶段少
+
+        一定记住，相对定位、固定定位、绝对定位 两个大的特点： 
+                1. 是否占有位置（脱标否） 
+                2. 以谁为基准点移动位置。
+        学习定位重点学会子绝父相。
+
+
+        定位叠放次序 z-index
+
+        在使用定位布局时，可能会出现盒子重叠的情况。此时，可以使用 z-index 来控制盒子的前后次序（z轴）。
+
+        语法：
+        选择器 { z-index: 1; }
+        数值可以是正整数、负整数或 0，默认是 auto，数值越大，盒子越靠上
+        如果属性值相同，则按照书写顺序，后来居上
+        数字后面不能加单位
+        只有定位的盒子才有 z-index 属性
+   */
+
+</style>
+<body>
+    
+</body>
+</html>

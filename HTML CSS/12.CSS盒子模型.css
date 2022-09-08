@@ -1,0 +1,113 @@
+/* 
+    页面布局要学习三大核心：盒子模型、浮动和定位
+ */
+
+/* 盒子模型 */
+/* 1.页面中的每一个标签，都可以看作是一个盒子，通过盒子的视角更方便的进行布局 */
+/* 2.浏览器在渲染页面的时候也会把页面中的元素看作是一个个的矩形区域，也形象的称之为盒子 */
+
+/* CSS中规定每个盒子分别由：内容区域(content)、内边距区域(padding)、边框区域(border)、外边距区域(margin)构成，这就是盒子模型 */
+
+/* 盒子 */
+div {
+    /* 内容区域 */
+    width: 300px;
+    height: 300px;
+    background-color: pink;
+    /* 内边距区域 */
+    padding: 1px;
+    /* 边框区域 */
+    border: 1px solid black;
+    /* 外边距区域 */
+    margin: 10px;
+}
+
+/* 盒子模型细记 */
+
+/* 1.内容区域: width height */
+    /* 作用: 宽度高度的作用是设置内容区域的宽高 */
+    /* 属性: width/height */
+    /* 常见取值: 数字+px */
+
+
+/* 2.内边距区域: padding */
+    /* 作用: 控制盒子边缘与内容的距离 */
+    /* 属性名: padding */
+    /* 属性值: padding: 上 右 下 左 padding: 10px 20px 30px 40px */
+
+    /* 解决padding和border会撑大盒子这个问题-可以手动自己减，也可以写上下面的代码 */
+    /* 在CSS3.0中，box-sizing:border-box 可实现自动内减，最后加上即可 */
+
+
+/* 3.边框区域: border */
+    /* 作用: 控制盒子边框的粗细，样式(实线-虚线-圆点线...)，颜色，... */
+    /* 属性名: border */
+    /* 属性值: 单个取值的连写，取值之间以空格隔开，比如 - border: 10px solid black */
+
+    /* border-collapse: collapse; 表示相邻表格边框合并在一起 这样可以解决表格边框之间边框重合变粗问题 */
+
+
+/* 4.外边距区域: margin */
+    /* 作用: 控制盒子与其他盒子的距离 */
+    /* 属性名: border */
+
+/* 注意: 上述234的属性均有单独控制上下左右的属性来实现某些特殊需求 */
+
+/* 遵循布局顺序: 从外到内 从上到下 网页的布局就可以分为一个个的盒子，或并排，或竖排... */
+
+
+/* 5.清除默认的内外边距 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 6.版心(网页的有效内容)居中 */
+
+div {
+    width: 800px;
+    height: 500px;
+    background-color: pink;
+    margin: 0 auto;
+}
+
+/* 7.盒子阴影：box-shadow */
+/* 
+    h-shadow	必须。水平阴影的位置，允许负值。
+    v-shadow	必须。垂直阴影的位置，允许负值。
+    blur	    可选。模糊距离（虚实程度）。
+    spread	    可选。阴影的尺寸（大小）。
+    color	    可选。阴影的颜色，请参阅 CSS 颜色值（阴影多为半透明颜色）。
+    inset	    可选。将外部阴影（outset）改为内部阴影（outset 不能指定，默认为空即可）。
+*/
+
+div {
+    width: 200px;
+    height: 200px;
+    background-color: salmon;
+    margin: 100px auto;
+    /* box-shadow: 10px 10px; */
+}
+
+/* 伪类不仅仅可以用于 a 链接，还能用于其他标签 */
+/* 原先盒子没有影子,当我们鼠标经过盒子就添加阴影效果 */
+div:hover {
+    box-shadow: 10px 10px 10px -4px rgba(0, 0, 0, .3);
+}
+
+/* 8.文字阴影：text-shadow */
+/* 
+    h-shadow	必须。水平阴影的位置。允许负值。
+    v-shadow	必须。垂直阴影的位置。允许负值。
+    blur	    可选。模糊的距离（虚实程度）。
+    color	    可选。阴影的颜色。参阅 CSS 颜色值。
+*/
+
+div {
+    font-size: 50px;
+    color: salmon;
+    font-weight: 700;
+    text-shadow: 5px 5px 6px rgba(0, 0, 0, .3);
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" onclick="alertt()">
+
+    <button id="btn">点我</button>
+
+    <div>888888</div>
+    <script>
+        function alertt(){
+            alert("你惦记了我");
+        }
+
+        // 事件: 事件是可以被JS侦测到的行为，触发->响应
+
+        // 事件由三部分组成: 事件源 事件类型 事件处理程序
+        // 事件源: 事件被触发的对象 例如按钮元素
+        // 事件类型: 如何触发，什么事件，例如鼠标点击(onclick)还是鼠标经过?键盘按下?
+        // 事件处理程序: 通过一个函数赋值的方式完成
+
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            alert("你点了我!");
+        }
+        // 由以上可见，btn为事件源，onclick为事件类型，后面的函数为事件处理程序
+
+        // 执行事件的步骤:1.获取事件源->2.绑定事件->3.添加事件处理程序
+        // 1.获取事件源
+        var con = document.querySelector("div");
+        // 2.绑定事件 con.onclick
+        // 3.添加事件处理程序
+        con.onclick = function(){
+            alert('你选中了我');
+        }
+        // 常见鼠标事件: ......
+    </script>
+</body>
+</html>

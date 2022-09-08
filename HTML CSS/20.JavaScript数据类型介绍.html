@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // JavaScript动态数据类型
+        var value;  // value现在是undfine
+        var value = 6;  // value现在是数字类型
+        var value = "6";  //value现在是字符串类型
+
+
+        // JavaScript字符串类型
+        var str1 = "字符串";
+        var str2 = "字符" + "串";   // + 像python一样可拼接多个字符串
+        var str3 = str1 + str2;   // 变量亦可
+        var str4 = ""   // 空字符串
+
+
+        // JavaScript数字类型
+        // 注意: 在 JS 中，所有数字不分大小、不分整浮、不分正负，都是数字类型。
+        var num = 6;
+        var num = 123e5;
+        var num = 123e-5;
+        var num = 0/0;   // 0/0 = NaN -> 即not a number, 但它是number类型
+        NaN == NaN   // false 不自等
+
+
+        // JavaScript布尔类型
+        var x = true;
+        var y = false;
+
+
+        // JavaScript数组类型
+        var arr = new Array();
+        arr[0] = 1;
+        arr[1] = 2;
+        arr[2] = 3;
+
+        var arr = new Array(1, 2, 3);
+
+
+        // JavaScript对象
+        // 对象由花括号分隔。在括号内部，对象的属性以名称和值对的形式 (name : value) 来定义。属性由逗号分隔
+        // 注意与python的对象 字典 列表等数据类型进行区分
+        var person = {
+            "firstName":"Li",
+            "lastName":"xue",
+            "id":"2020304023"
+        }   // 这就是JavaScript对象的定义方式，与python有很大的不同，注意区分
+
+        var firstName = person.firstName;
+        var id = person["id"];   // 对象的两种寻找方法
+
+
+        // Undefined 和 Null 类型
+        // Undefined 这个值表示变量不含有值. 可以通过将变量的值设置为 null 来清空变量.
+        var varliable;   // 当定义变量但为赋值时, 此变量便为undefined
+        varliable = null;   // 将此变量赋值为null
+
+
+        // 声明变量类型
+        // 当您声明新变量时，可以使用关键词 "new" 来声明其类型
+        var str = new String;
+        var num = new Number;
+        var boo = new Boolean;
+        var arr = new Array;
+        var obj = new Object;
+
+        var tet = "str";
+
+
+        // 判断变量类型： typeof 运算符
+        typeof tet;   // tet为string类型
+        typeof 666;   // 666为number类型
+
+
+        // 转换数据类型
+
+        // toString() 转换到字符串
+        var num = 1;
+        var str = num.toString();
+        // String() 强制转换到字符串
+        var num = 1;
+        var str = String(num);
+
+        // parseInt(string)
+        var str = "123";
+        var num = parseInt(str);
+        // paseFloat(string)
+        var str = "123.123";
+        var num = parseFloat(str);
+        // Number() 强制转换函数
+        var str = "123.2";
+        var num = Number(str);
+
+        var value = prompt("请输入你的出生年");
+        var old = 2022 - parseInt(value);
+        alert("你今年已经" + old.toString() + "啦!");
+    </script>
+</body>
+</html>

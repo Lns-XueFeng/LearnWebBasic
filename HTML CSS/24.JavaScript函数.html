@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="myFunction()">点我</button>
+
+    <script>
+        // Js中函数是由事件驱动的或者当它被调用时执行的可重复使用的代码块。
+        // 在js中，当某事件发生时，直接调用函数。
+        function myFunction(){
+            alert("Hello World !");
+        }
+
+        // Js函数语法
+
+        // 普通函数定义
+        function funcName(params) {
+            var state = "函数内代码块";
+
+            return state;
+        }
+
+        // 函数表达式定义
+        var funcName = function (a, b) {
+            var result = a + b;
+
+            return result;
+        }
+
+        var result = funcName(1, 4);
+
+        // Function() 构造函数
+        var funcName = new Function("a", "b", "return a + b")
+
+        // 自调用函数
+        (function(a, b){
+            var result = a + b;
+        })()
+
+        // 箭头函数
+        // 遇到的时候在去查
+
+
+        // Js函数调用
+        //JavaScript 函数有 4 种调用方式。
+        //每种方式的不同在于 this 的初始化。
+        // 一般而言，在Javascript中，this指向函数执行时的当前对象。
+
+        // 四种函数调用: 
+
+        // 1作为一个函数调用 
+        // 2全局对象 
+        // 3函数作为方法调用 
+        // 4使用构造函数调用函数 
+        // 5作为函数方法调用函数
+
+        // 去菜鸟教程看详细解释
+    </script>
+</body>
+</html>

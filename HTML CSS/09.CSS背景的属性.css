@@ -1,0 +1,81 @@
+/* 1.背景颜色: 属性-background-color ememt: 属性简写-bgc */
+
+div {
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+    /* background-color: pink; */
+    /* background-color: rgb(0, 0, 0); */
+    /* 一般情况下元素背景颜色默认值是 transparent（透明），我们也可以手动指定背景颜色为透明色。 */
+    background-color: transparent;
+}
+div {
+    height: 200px;
+    /* 浏览器不支持时显示 */
+    background-color: red;
+    /* 背景颜色 线性渐变 - 从上到下（默认情况下）*/
+    background-image: linear-gradient(#e66465, #9198e5);
+}
+
+/* 2.背景图片: background-image bgi */
+/* background-image 属性描述了元素的背景图像，实际开发常用于 logo 或者一些装饰性的小图片或者是超大的背景图片, 优点是非常便于控制位置（精灵图也是一种运用场景）。 */
+
+div {
+    width: 400px;
+    height: 400px;
+    background-color: pink;
+    background-image: url("图片的路径");
+}
+
+/* 3.背景平铺: background-repeat bgr */
+
+div {
+    background-repeat: repeat;
+    background-repeat: no-repeat;
+    background-repeat: repeat-x;
+    background-repeat: repeat-y;
+}
+
+/* 4.背景位置: background-position bgp */
+
+div {
+    background-position: 0px 0px;
+    background-position: right 0;
+    background-position: right bottom;
+    background-position: center center;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+/* 5.背景属性连写: background bg */
+
+ div {
+     width: 400px;
+     height: 400px;
+     background: #000 url("path") no-repeat center;
+ }
+
+ /* 6.背景图像固定（背景附着）*/
+ /* background-attachment 属性设置背景图像是否固定或者随着页面的其余部分滚动。 */
+
+ div {
+     background-attachment: fixed;   /* 背景图片沾满全屏，滚动内容会发现背景图片始终相对不动 */
+ }
+
+ div {
+     background-attachment: scroll;   /* 背景图像是随对象内容滚动的（可见区域取决于背景图像的高度）*/
+ }
+
+
+ /* 7.背景色半透明 */
+
+ div {
+     background-color: rgba(0, 0, 0, 0.3);   /* 最后一个数字是控制透明度的(取值范围0-1) */
+ }
+
+ 
+ /* 
+    对于网页中的大面积图片而言，一般不采用直接插入图片的方式来做，
+    因为图片的分辨率及尺寸是固定的但是显示器或网页窗口的大小分辨率则是会改变的，
+    直接插入图片的话不方便控制图片大小及位置
+ */

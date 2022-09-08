@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Javascript代码写在script标签之中 -->
+    <!-- 因为代码是按从上往下执行的顺序来执行的, 因此一般脚本写在最后, 但也可以在写在head标签内 -->
+    <!-- 这涉及到jquery，这里这里知道即可, 没下载这个jquery库, 下面函数无法生效, 知道意思即可 -->
+    <script src="jquery-1.11.2.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#btn').click(function func(){
+                alert("叫你点你就点啊，溜了溜了。");
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" name="btn" id="btn" value="点我">
+
+    <script>
+        // 就像css那样, 脚本代码如果要写在HTML中, 则必须写在script标签之中
+        // 到最后, 代码多起来了之后, 亦可将脚本代码写入单独js文件之中, 并在HTML中引入即可
+        function myFunction(){
+            var x = "Hello JavaScript!";
+            alert(x);
+        };
+
+        myFunction()
+    </script>
+
+    <!-- 引入外部js文件，像我们自己独立出去的js文件，或者是jquery库这种均可引入 -->
+    <script src="JavaScript.js"></script>
+</body>
+</html>

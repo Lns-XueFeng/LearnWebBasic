@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 400px;
+            height: 400px;
+            background-repeat: repeat;
+            border-radius: 20px;
+        }
+
+        .pcic {
+            width: 500px;
+            height: 500px;
+            background-repeat: repeat;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>显示系统时间</button>
+    <div>系统时间</div>
+    <div class="test"></div>
+    <div class="unsame1"></div>
+    <div class="unsame2"></div>
+
+    <button id="t1">图一</button>
+    <button id="t2">图二</button><br>
+    <img src="./pic.jpg">
+
+    <br><button id="biaodan">按钮</button>
+    <input type="text" value="请输入内容"><br>
+
+    <img id="picc" src="./turtle.png" alt="">
+
+    <script>
+        // 操作元素
+
+        // 一.改变元素内容: element.innerText/element.innerHTML
+        var btn = document.querySelector("button");
+        var div = document.querySelector("div");
+
+        btn.onclick = function () {
+            div.innerText = getDate();
+        }
+
+        function getDate() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var dates = date.getDate();
+            arr = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+            var day = date.getDay();
+            return "今天是 " + year + "年 " + month + "月 " + dates + "日 " + arr[day]
+        }
+
+        // 不注册事件
+        var time = document.querySelector(".test");
+        time.innerText = getDate();
+
+        // element.innerText与element.innerHTML的不同
+        // 1.innerHTML可以识别html代码
+        var text1 = document.querySelector(".unsame1");
+        text1.innerText = "<strong>innerText无法识别html代码</strong>";
+        var text2 = document.querySelector(".unsame2");
+        text2.innerHTML = "<strong>innerHTML可以识别html代码</strong>";
+        // 2.innerHTML保留空格和换行而innerText不会(其实就是前者把html也显示了，后者只显示内容)
+        console.log(text1.innerText);
+        console.log(text2.innerHTML);
+        // 基本上用innerHTML就行，它是一个标准。
+
+
+        //二.修改元素属性: 直接调用元素相应的属性 href src title alt等
+        var t1 = document.querySelector("#t1");
+        var t2 = document.querySelector("#t2");
+        var img = document.querySelector("img");
+        t2.onclick = function () {
+            img.src = './turtle.png';
+            img.title = "递归探索迷宫";
+        }
+        t1.onclick = function () {
+            img.src = './pic.jpg';
+            img.title = "大海 枫叶";
+        }
+
+
+        // 三.修改表单属性: type value checked selected disabled等
+        var btn = document.querySelector("#biaodan");
+        var input = document.querySelector("input");
+        btn.onclick = function () {
+            // input.innerHTML = "被惦记了"; 这个无法修改表单的
+            input.value = "被惦记了";
+            // btn.disabled = true; // 禁用按钮
+            this.disabled = true
+        }
+
+
+        // 四.修改元素样式: element.style (行内式) element.className (类名样式操作)
+        // 1.通过style - 一次修改少量 权重高
+        var pic = document.querySelector("img");
+        pic.onclick = function () {
+            // 注意: 修改样式时属性名遵守驼峰命名法
+            // 行内样式权重高
+            this.style.borderRadius = "0px";
+        }
+        // 例如你删除广告，就是改变显示方式，变hidden
+        // 循环精灵图很值得反复回味
+
+        // 2.通过className - 一次性修改多个
+        var picc = document.querySelector("#picc");
+        picc.onclick = function () {
+            this.className = "pcic";
+            // 如果要保留原先的类名且也加新的
+            // this.className = "原先的类名 新加的类名";
+        }
+
+        // 五.获取自定义属性: element.getAttribute("自定义属性名"); element.setAttribute("data-index",i)
+        // 通过自定义属性，并用上述方法获取自定义属性，可以使得我们自己定义函数通过绑定自定义属性来控制效果
+        // tab栏切换案例->单独一个文件
+        // H5规定自定义属性命名规范以data-开头，例如: data-index
+
+
+        // 六.节点操作
+        var element = document.querySelector("#pic")
+
+        element.parentNode //获得父节点
+        element.childNodes //获得子节点
+        element.nextSibling //获得下一兄弟节点
+        element.previousSibling //获得上一兄弟节点
+
+        element.parentElement //获得父元素
+        element.childElementCount //获得子元素数量
+        element.nextElementSibling //获得下一兄弟元素
+        element.previousElementSibling //获得上一兄弟元素
+
+        var newNode = document.createElement("div") //创建新元素节点
+        element.appendChild(newNode) //element添加自己的子节点
+        element.removeChild(newNode) //删除element的子节点
+
+        element.insertBefore(newNode, element.children[0]) //永远将新来的newNode插入到element的第一个
+    </script>
+</body>
+
+</html>

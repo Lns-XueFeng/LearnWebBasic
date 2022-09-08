@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo">我是demo</div>
+    <div>
+        <p>请输入数字，如果不是数字则会弹出提示框!!!</p>
+        <input type="text" name="input" id="input">
+    </div>
+
+
+    <script>
+        // 注：JavaScript教程手册 - https://wangdoc.com/javascript/
+        // 注：JavaScript查询手册 - MDN - https://developer.mozilla.org/zh-CN/
+
+        // JS包括: ECAScript语法 DOM BOM
+        // 第一阶段学习基础语法, 变量->数据类型->运算符->控制语句->函数->对象.
+        // 第二阶段学习DOM，BOM为webAPIs, DOM->操控HTML, BOM->操控浏览器.
+        // 第三阶段学习jQuery APIs, Bootstrap等框架
+
+
+
+        // 该例展示Js的部分能力
+        // 一、改变HTML内容
+        document.getElementById("demo").innerHTML = "Hello JavaScript!";
+    
+        // 二、直接写入HTML内容
+        document.write("<h1>你好，JavaScript!</h1>");
+    
+        // 三、改变HTML样式
+        x = document.getElementById("demo");
+        x.style.color = "pink";
+    
+        // 四、验证输入
+        function myFunction(){
+            var value = document.getElementById('input').value;
+            if(value == ""||isNaN(value)){
+                alert("不是数字，请输入数字。")
+            }
+            else{
+                alert("恭喜你，你输入了数字。")
+            }
+        }
+    
+    </script>
+    <button type="button" onclick="myFunction()">点击这里</button>
+</body>
+</html>
