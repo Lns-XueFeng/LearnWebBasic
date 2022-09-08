@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 全局变量会成为 window 对象的属性。 -->
+    <script>
+        var a = 10;
+        console.log(window.a == a);
+        // 这就意味着，多个 js 文件之间是共享全局作用域的，即：js 文件没有作用域隔离功能。一个页面多个js文件，window访问不同js文件的变量
+    </script>
+
+    <!-- 内置函数普遍是window的方法: 如 setInterval()、alert() 等内置函数，普遍是 window 的方法。 -->
+
+    <script>
+        console.log(window.alert == alert);   // true
+        console.log(window.setInterval == setInterval)   // true
+    </script>
+
+
+    <!-- 
+    窗口尺寸相关属性:
+    属性	     意义
+    innerHeight	浏览器窗口的内容区域的高度，包含水平滚动条（如果有的话）
+    innerWidth	浏览器窗口的内容区域的宽度，包含垂直滚动条（如果有的话）
+    outerHeight	浏览器窗口的外部高度
+    outerWidth	浏览器窗口的外部宽度 
+    -->
+
+    <!-- resize事件
+    在窗口大小改变之后，就会触发 resize 事件，可以使用 window.onresize 或者 window.addEventListener('resize') 来绑定事件处理函数。 -->
+
+
+    <!-- window.scrollY 属性表示在垂直方向已滚动的像素值。
+    document.documentElement.scrollTop 属性也表示窗口卷动高度。 -->
+
+    <script>
+        // 获得窗口卷动的高度
+        var scrollTop = window.scrollY || document.documentElement.scrollTop
+        // document.documentElement.scrollTop 是可以手动给定值的，以达到跳动到任何指定滚动高度处
+        // window.scrollY 是只读的，不可以手动给值
+    </script>
+
+    <!-- 在窗口被卷动之后，就会触发 scroll 事件，可以使用：window.onscroll 或者 window.addEventListener('scroll') 来绑定事件处理函数。 -->
+</body>
+</html>

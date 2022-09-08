@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery-v3.6.0.js"></script>
+</head>
+<body>
+    <div class="btn1">
+        <button>显示</button>
+        <button>隐藏</button>
+        <button>切换</button>
+    </div>
+    <div class="cls1" style="display: none; width: 100px; height: 100px; background-color: pink;"></div>
+    
+    <div class="btn2">
+        <button>下拉滑动</button>
+        <button>上拉滑动</button>
+        <button>切换滑动</button>
+    </div>
+    <div class="cls2" style="display: none; width: 100px; height: 100px; background-color: pink;"></div>
+
+    <div class="btn3">
+        <button>淡入</button>
+        <button>淡出</button>
+        <button>淡化切换</button>
+        <button>淡化至</button>
+    </div>
+    <div class="cls3" style="display: none; width: 100px; height: 100px; background-color: pink;"></div>
+
+    <h2>解决动画排队问题,上面的按钮短时间快速点击多次会发现动画排队现象<br></h1>
+    <div class="btn4">
+        <button>淡入</button>
+        <button>淡出</button>
+        <button>淡化切换</button>
+    </div>
+    <div class="cls4" style="display: none; width: 100px; height: 100px; background-color: pink;"></div>
+    <br>
+
+    <div class="fadeto">
+        <div style="display: inline-block; width: 100px; height: 100px; background: pink;"></div>
+        <div style="display: inline-block; width: 100px; height: 100px; background: pink;"></div>
+        <div style="display: inline-block; width: 100px; height: 100px; background: pink;"></div><br>
+        <div style="display: inline-block; width: 100px; height: 100px; background: pink;"></div>
+        <div style="display: inline-block; width: 100px; height: 100px; background: pink;"></div>
+        <div style="display: inline-block; width: 100px; height: 100px; background: pink;"></div>
+    </div>
+
+    <button class="anim">出发</button><br>
+    <div class="animate" style="display: inline-block; width: 100px; height: 100px; background: black;"></div>
+    <script>
+        // 1.显示与隐藏: show()、hide()、toggle()
+        $(".btn1 button").click(function(){
+            var index = $(this).index();
+            if(index == 0){
+                $(".cls1").show(500, "linear", function(){
+                    alert("此动画已经完成，调用回调函数")
+                });
+            }
+            else if(index == 1){
+                $(".cls1").hide(500, "linear" , function(){
+                    alert("此动画已经完成，调用回调函数")
+                });
+            }
+            else{
+                $(".cls1").toggle(500, "linear" , function(){
+                    alert("此动画已经完成，调用回调函数")
+                });
+            }
+        });
+
+        // 2.滑入与滑出: slideDown()、slideUp()、slideToggle()
+        $(".btn2 button").click(function(){
+            var index = $(this).index();
+            if(index == 0){
+                $(".cls2").slideDown(500, "linear", function(){
+                    alert("此动画已经完成，调用回调函数")
+                });
+            }
+            else if(index == 1){
+                $(".cls2").slideUp(500, "linear" , function(){
+                    alert("此动画已经完成，调用回调函数")
+                });
+            }
+            else{
+                $(".cls2").slideToggle(500, "linear" , function(){
+                    alert("此动画已经完成，调用回调函数")
+                });
+            }
+        });
+
+        // 3.淡入与淡出: fadeIn()、fadeOut()、fadeToggle()、fadeTo()
+        $(".btn3 button").click(function(){
+            var index = $(this).index();
+            if(index == 0){
+                $(".cls3").fadeIn(500, function(){
+                    alert("此动画已经完成，调用回调函数")
+                });
+            }
+            else if(index == 1){
+                $(".cls3").fadeOut(500, function(){
+                    alert("此动画已经完成，调用回调函数")
+                });
+            }
+            else{
+                $(".cls3").fadeToggle(500, function(){
+                    alert("此动画已经完成，调用回调函数")
+                });
+            }
+        });
+
+        // 停止动画排队：在动画效果方法前加上stop()方法
+        $(".btn4 button").click(function(){
+            var index = $(this).index();
+            if(index == 0){
+                $(".cls4").stop().fadeIn(500, function(){
+                    alert("此动画已经完成，调用回调函数")
+                });
+            }
+            else if(index == 1){
+                $(".cls4").stop().fadeOut(500, function(){
+                    alert("此动画已经完成，调用回调函数")
+                });
+            }
+            else{
+                $(".cls4").stop().fadeToggle(500, function(){
+                    alert("此动画已经完成，调用回调函数")
+                });
+            }
+        });
+
+        $(".fadeto div").hover(function(){
+            $(this).stop().fadeTo(100, 1).siblings().stop().fadeTo(100, 0.3);   // 鼠标经过时此元素透明度为1，兄弟元素透明度为0.3
+        }, function(){
+            $(this).stop().fadeTo(100, 1).siblings().stop().fadeTo(100, 1);   // 鼠标离开时此所有元素透明的为1
+        })
+
+        // 4.自定义动画: animate()
+        $(".anim").click(function(){
+            $(".animate").animate({
+                // left: 100,
+                // top: 100,   // 应该是因为位置被挤占的原因无法进行移动动画
+                opacity: 0.5,
+                width: 500
+        }, 500)
+        });
+
+        // 在https://jquery.cuishifeng.cn/index.html中可查询api的使用方法
+    </script>
+</body>
+</html>

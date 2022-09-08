@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>      
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script src="jQuery-v3.6.0.js"></script>
+    </head>
+    <body>
+        <div class="cls" id="idd">
+            <li class="fir">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <p></p>
+        </div>
+        <span class="plt" id="add">
+            <p>a</p>
+            <p>b</p>
+            <p>c</p>
+            <p>d</p>
+        </span>
+
+        <button>按钮</button>
+        <button>按钮</button>
+        <button>按钮</button>
+        <button>按钮</button>
+
+        <script>
+            $(function() {   // jQuery入口函数（在DOM加载完毕后执行）
+                // 1.jQuery基本/层级选择器: 支持CSS所有的选择器 语法格式：$("选择器")
+                $("div");   // 标签选择器
+                $(".cls");   // 类选择器
+                $("#idd");   // id选择器
+                $("*");   // 全选择器
+                $("div,span");   // 并集选择器
+                $("divspan");   // 交集选择器
+                console.log($("div"));
+
+                // 2.jQuery隐式迭代
+                $(".cls li").css("background", "pink");   // 原生js进行此操作需要遍历每个li并设置其背景颜色，但jQuery会自动进行隐式迭代自动给每个li添加了背景颜色
+
+                // 3.jQuery筛选选择器
+                $("div li:first").css("background", "red");   // 选择div中第一个li并改为红色
+                $("div li:last").css("background", "blue");   // 选择div中最后一个li并改为蓝色
+                $("div li:eq(1)").css("background", "green");   // 选择div中第二个li并改为绿色
+                $("span p:odd").css("background", "black");   // 选择span中为奇数的并改为黑色
+                $("span p:even").css("background", "purple");   // 选择span中为偶数的并改为紫色
+
+                // 4.jQuery筛选方法
+                $("span p").parent();   // 选择p元素的父级
+                $("div").children("li");   // 选择div的子级li（最近的一级）
+                $("div").find("p");   // 相当于$("div p") 后代选择器
+                $(".fir").siblings("li");   // 查找兄弟节点（不包括本身）
+                $("span").eq(2);   // 选择span中第三个p
+                $("div").hasClass("cls");   // 检查某个元素是否有某个类名，如果有，返回true
+            })
+
+                // 5.jQuery排他思想：相比于原生js，jQuery则非常简单
+                $("button").click(function(){
+                    // 将当前元素背景颜色设置为pink
+                    $(this).css("background", "pink");
+                    // 将其他元素背景颜色设置为白色
+                    $(this).siblings().css("background", "");
+
+                    // 其原理就是jquery会自动进行隐式迭代，我们无需像原生js那样进行遍历。
+                })
+
+                // 注：在原生js中，对具有对应关系的两组标签，通过自定义data-index属性，当一个一组标签中的某个标签发生某个事件，另外一组标签的对应的标签会发生某些改变。
+                // 但是在jQuery中，只需要$(this).index()即可得到这个元素的索引值，再使用$('选择器').eq(index)进行对应元素的操作。
+
+        </script>
+
+        <!-- <script src="jQuery-v3.6.0.js" async defer></script> -->
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="test">222</div>
+
+    <script>
+        // 事件对象
+        //1.event就是事件对象，将其当作形参写入监听函数。
+        //2.事件对象只有有了事件时才会存在。他是系统自动给我们创建的，我们无需传参。
+        //3.事件对象就是我们事件一系列相关数据的集合，比如当鼠标点击时事件对象就包含了鼠标的相关数据，比如鼠标坐标......
+        //4.事件对象可以自己命名: 比如- event evt e...
+        var tt = document.querySelector(".test")
+        tt.onclick = function(event){
+            console.log(event);   // 看一下事件对象有哪些数据
+        }
+
+        tt.addEventListener('click', function(event){
+            console.log(event);
+        })
+
+        // 常见事件对象属性和方法
+        //1. e.target返回的是触发事件的对象(元素) this返回的是绑定事件的对象(元素)
+        //即，e.target 点击了那个元素，就返回那个元素  this 那个元素绑定了该事件，就返回那个元素 currentTarget和this非常相似
+
+        // 其他常见事件对象属性与方法: ./事件对象的属性与方法.png
+
+
+        // 阻止冒泡过程 阻止默认行为
+
+        
+    </script>
+</body>
+</html>

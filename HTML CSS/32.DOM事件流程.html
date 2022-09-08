@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .father1 {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+        
+        .son1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 0 auto;
+        }
+
+        .father2 {
+            width: 400px;
+            height: 400px;
+            background-color: red;
+            margin: 0 auto;
+        }
+        
+        .son2 {
+            width: 200px;
+            height: 200px;
+            background-color: lightskyblue;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="father1">
+        <div class="son1">
+            <span style="text-align: center;">事件捕获过程</span>
+        </div>
+    </div>
+    
+    <div class="father2">
+        <div class="son2">
+            <span style="text-align: center;">冒泡捕获过程</span>
+        </div>
+    </div>
+    <script>
+        // ** DOM事件流意思就是在绑定事件的时候从根开始往下找，由于前面的没有绑定事件，则会继续向下寻找，直到找到我们绑定的事件处理程序并执行 **
+        // 事件流有两种过程，捕获过程和冒泡过程。捕获过程从上往下寻找，冒泡过程从下往上执行。
+        // (1).捕获过程，添加事件的第三个参数表示为true即可  过程: document -> html -> body -> father -> son 
+        var son1 = document.querySelector(".son1")
+        son1.addEventListener('click', function(){   // 由于son前面的均未绑定次处理函数，因此直到执行son时才会触发
+            alert("son1")                            
+        }, true)
+
+        var father1 = document.querySelector(".father1")
+        father1.addEventListener('click', function(){   // 此时点击son区域先弹出father提示，不正是证明了捕获过程的执行顺序？
+            alert("father1")
+        }, true)
+
+
+        // (2).冒泡过程，添加事件的第三个参数表示为false或不加即可  过程: son -> father -> body -> html -> document
+        var son2 = document.querySelector(".son2")
+        son2.addEventListener('click', function(){   // 先从son开始，son有处理函数，有响应，往上执行，father body等均没有处理函数，所以无响应
+            alert("son2")                            
+        }, false)
+
+        var father2 = document.querySelector(".father2")
+        father2.addEventListener('click', function(){   // 此时点击son区域先弹出son再弹出father提示，不正是证明了冒泡过程的执行顺序？
+            alert("father2")
+        }, false)
+
+        //注意: JS代码中只能执行捕获/冒泡过程其中的一个阶段，冒泡用的比较多。
+        // onclick和attachEvent只能得到冒泡阶段
+        // 有些事件是没有冒泡的，比如: onblur onfocus onmouseenter onmouseleave
+    </script>
+</body>
+</html>

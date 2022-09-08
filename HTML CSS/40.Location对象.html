@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Location对象
+    window.location 标识当前所在网址，可以通过给这个属性赋值命令浏览器进行页面跳转。 -->
+    <script>
+        window.locaiton = 'http://www.imooc.com';
+        window.location.href = 'http://www.imooc.com';
+    </script>
+    <!-- 重新加载当前页面
+    可以调用 location 的 reload 方法以重新加载当前页面，参数 true 表示强制从服务器强制加载。
+    window.location.reload(true); -->
+    
+    <!-- GET请求查询参数
+    window.location.search 属性即为当前浏览器的 GET 请求查询参数。
+    比如网址：https://www.imooc.com/?a=1&b=2
+    console.log(window.location.search);	// "?a=1&b=2"
+    关于 GET 及 POST 的详细内容在 Ajax 中介绍。 -->
+</body>
+</html>

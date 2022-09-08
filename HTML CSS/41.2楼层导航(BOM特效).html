@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .container .left-lan {
+            background-color: blue;
+        }
+
+        .container .left-lan .left-item {
+            width: 700px;
+            height: 900px;
+            /* margin: 5px; */
+            padding: 5px;
+            border: solid blue 10px;
+            background-color: pink;
+        }
+
+        .container .right-dao nav {
+            width: auto;
+            height: auto;
+            display: flex;
+            position: fixed;
+            right: 20px;
+            top: 40%;
+        }
+
+        .container .right-dao nav ul {
+            background-color: rgb(226, 109, 226);
+            border: solid 3px;
+            box-sizing: border-box;
+            width: 80px;
+        }
+
+        .container .right-dao nav ul li {
+            list-style: none;
+            /* margin: 1px; */
+            /* padding-right: 35px; */
+            text-align: center;
+            /* 小手指针 */
+            cursor: pointer;
+        }
+
+        .container .right-dao nav ul .current {
+            background-color: purple;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-lan">
+            <div class="left-item" data-n="体育">体育栏目</div>
+            <div class="left-item" data-n="新闻">新闻栏目</div>
+            <div class="left-item" data-n="娱乐">娱乐栏目</div>
+            <div class="left-item" data-n="科技">科技栏目</div>
+            <div class="left-item" data-n="视频">视频栏目</div>
+        </div>
+
+        <div class="right-dao">
+            <nav class="item-block">
+                <ul id="list">
+                    <li data-n="体育" class="current">体育</li>
+                    <li data-n="新闻">新闻</li>
+                    <li data-n="娱乐">娱乐</li>
+                    <li data-n="科技">科技</li>
+                    <li data-n="视频">视频</li>
+                </ul>   
+            </nav>  
+        </div>
+        </div>
+
+        <script>
+            var ul = document.getElementById("list");
+            var li = document.querySelectorAll("li");
+            var items = document.querySelectorAll(".left-item");
+
+            ul.addEventListener('click', function(e){
+                if(e.target.tagName.toLowerCase() == "li"){
+                    // 得到li的自定义属性
+                    var n = e.target.getAttribute('data-n');
+                    // 利用方括号选择器来选择相对应的栏目
+                    var i = document.querySelector('.left-item[data-n=' + n + ']');   // 注意: 此处的引号需一致
+
+                    // 根据得到的li自定义属性来滚动到相应的offsetTop
+                    document.documentElement.scrollTop = i.offsetTop;
+
+                }
+            });
+
+            // -------------------上面做卷动到对应栏目 下面做导航对应变化----------------------
+
+            // 将栏目的offsetTop推入数组中
+            var offsetTopArr = [];
+            for (var i=0; i<items.length; i++){
+                offsetTopArr.push(items[i].offsetTop)
+            };
+            offsetTopArr.push(Infinity);
+            console.log(offsetTopArr)
+
+            // 假设当前楼层
+            var nowFloor = -1;
+
+            window.onscroll = function(){
+                // 获得当前窗口卷动值
+                var scrollTop = document.documentElement.scrollTop;
+                console.log("当前窗口高度: " + scrollTop)
+                // 查看当前在那两个楼层之间
+                for(var i=0; i < offsetTopArr.length; i++){
+                    if(scrollTop >= offsetTopArr[i] && scrollTop < offsetTopArr[i+1]){
+                        console.log("当前楼层: " + i)
+                        break;   // 得到i => 当前楼层
+                    };
+                };
+
+                // 如果不在当前楼层
+                if(nowFloor != i){
+                    nowFloor = i;   //设置当前楼层至全局变量nowFLoor
+
+                    // 设置当前导航条 => 变色
+                    for(var j=0; j<li.length; j++){
+                        console.log("j为: " + j)
+                        if(j == i){
+                            li[j].className = 'current';
+                        }
+                        else{
+                            li[j].className = '';
+                        };
+                    };
+                };
+            };
+        </script>
+    </body>
+</html>

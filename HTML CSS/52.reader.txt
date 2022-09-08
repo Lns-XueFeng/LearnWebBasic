@@ -1,0 +1,4 @@
+jQuery的随记入门到此结束，前面仅仅是了解jquery，
+更多的需要，前往https://jquery.cuishifeng.cn/index.html自行查看。
+
+此查询文档非常简单易懂。

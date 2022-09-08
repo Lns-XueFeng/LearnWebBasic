@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>111111111111111</li>
+        <li>222222222222222</li>
+        <li>333333333333333</li>
+    </ul>
+    
+    <script>
+        // 事件委托的原理: 不是给每一个节点单独设置事件监听器，而是给其父节点设置事件监听器，然后利用冒泡原理影响设置每个子节点
+        var ul = document.querySelector("ul")
+        ul.addEventListener('click', function(e){   // 默认就是冒泡过程
+            alert("弹框");
+            e.target.style.backgroundColor = "pink";   // 得到被点击到的元素 并将其颜色改变
+        })
+
+        // 这样子就不需要像以前一样，循环来给每一个子节点设置了。
+    </script>
+</body>
+</html>

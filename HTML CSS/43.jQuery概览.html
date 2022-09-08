@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 在jquery网站下载源代码 -->
+    <script src="jQuery-v3.6.0.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="ex" id="ex">
+        <li></li>
+        <li></li>
+        <li>jquery的方法</li>
+    </div>
+
+    <script>
+        // $是著名的jQuery符号。实际上，jQuery把所有功能全部封装在一个全局变量jQuery中，而$也是一个合法的变量名，它是变量jQuery的别名。
+        // 即，jQuery通过一个简单的符号$来引出各种封装好的功能，大大简化了代码复杂度。
+        $();
+        jQuery();
+
+        // 1.jQuery选择器：jquery选择某个元素只需在括号内填入类似于css的选择器
+        $("div");   // 标签选择器
+        $(".ex");   // 类选择器
+        $("#ex");   // id选择器
+        
+        var dom_obj = document.querySelector(".ex");
+        var jq_obj = $(dom_obj);   // 将dom对象转换为jQuery对象
+
+        // 更多选择器知识见https://jquery.cuishifeng.cn/
+
+
+        // 2.jQuery方法：在jQuery选择某个元素后对其进行的某些操作
+        var str = $("div:eq(2)").text();
+        console.log(str);
+        color = str.css("color");
+        console.log(color);
+        str.css("color", "red");
+
+        // 更多jQuery方法见https://jquery.cuishifeng.cn/
+
+
+        // 3.jQuery事件：当某个元素被怎么这么了之后要怎么这么响应
+        $("div").click(function(){
+            // ......
+        });
+
+        $('div').on("click", function(){
+            // ......
+        });
+
+        var fuc = function(e){
+            // ......
+            e.pageX;
+            e.pageY;
+        };
+        $('div').mousemove(fuc);
+        // 10秒钟后解除绑定:
+        setTimeout(function () {
+            $("div").off('mousemove', fuc);
+        }, 10000);
+
+        // 自动触发事件
+        $("div").on("click", function(){
+            // $("div").click();   // 会自动触发此事件
+
+            // $("div").trigger("click");   // 自动触发此事件
+
+            $("div").triggerHandler("click");   // 自动触发此事件
+        })
+
+
+        // 更多事件见https://jquery.cuishifeng.cn/
+
+
+        // 4.jQuery动画：通过jQuery很简单的实现一些交互效果
+        var div = $('#test-show-hide');
+        div.hide(3000); // 在3秒钟内逐渐消失
+
+        var div = $('#test-slide');
+        div.slideUp(3000); // 在3秒钟内逐渐向上消失
+
+        // 更多动画效果见https://jquery.cuishifeng.cn/
+
+
+        // 5.jQuery Ajax
+
+        // jQuery在全局对象jQuery（也就是$）绑定了ajax()函数，可以处理AJAX请求。ajax(url, settings)函数需要接收一个URL和一个可选的settings对象，常用的选项如下：
+
+        // async：是否异步执行AJAX请求，默认为true，千万不要指定为false；
+
+        // method：发送的Method，缺省为'GET'，可指定为'POST'、'PUT'等；
+
+        // contentType：发送POST请求的格式，默认值为'application/x-www-form-urlencoded; charset=UTF-8'，也可以指定为text/plain、application/json；
+
+        // data：发送的数据，可以是字符串、数组或object。如果是GET请求，data将被转换成query附加到URL上，如果是POST请求，根据contentType把data序列化成合适的格式；
+
+        // headers：发送的额外的HTTP头，必须是一个object；
+
+        // dataType：接收的数据格式，可以指定为'html'、'xml'、'json'、'text'等，缺省情况下根据响应的Content-Type猜测。
+
+
+        // 6.jQuery 扩展
+    </script>
+</body>
+</html>

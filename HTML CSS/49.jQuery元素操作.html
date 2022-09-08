@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery-v3.6.0.js"></script>
+</head>
+<body>
+    <div class="ind">1</div>
+    <div>2</div>
+    <div>3</div>
+    
+    <script>
+        // 1.使用each方法遍历元素（类似for循环）
+        var arr = ["red", "green", "blue"];
+        $("div").each(function(index, domEle){
+            console.log(index); 
+            $(domEle).css("background", arr[index]);
+            // 回调函数第一个参数为索引，第二个参数为DOM元素
+        })
+
+        // 2.选取元素，注意：返回的是DOM对象，和eq很像，但eq返回的是jQuery对象
+        var domVar = $("div").get(0);
+        console.log(domVar);
+
+        // 3.返回元素相对的索引：index方法
+        var inde = $(".ind").index("div")
+        console.log(inde);
+
+        // 更多见https://jquery.cuishifeng.cn/length.html
+    </script>
+</body>
+</html>

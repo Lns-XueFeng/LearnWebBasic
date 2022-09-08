@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tanxingbox1.css">
+    <style>
+        .flex-container {
+            display: flex;
+            width: 700px;
+            height: auto;
+            background-color: blue;
+            /* align-content: space-around; */
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 0 auto;
+        }
+
+        .flex-item {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 10px;
+        }
+
+        .returnTop {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            text-align: center;
+            line-height: 100px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .returnTop:hover {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="flex-item" style="text-align: center;">item1</div>
+        <div class="flex-item" style="text-align: center;">item2</div>
+        <div class="flex-item" style="text-align: center;">item3</div>
+        <div class="flex-item" style="text-align: center;">item4</div>
+        <div class="flex-item" style="text-align: center;">item5</div>
+        <div class="flex-item" style="text-align: center;">item6</div>
+        <div class="flex-item" style="text-align: center;">item7</div>
+        <div class="flex-item" style="text-align: center;">item8</div>
+        <div class="flex-item" style="text-align: center;">item9</div>
+        <div class="flex-item" style="text-align: center;">item10</div>
+        <div class="flex-item" style="text-align: center;">item1</div>
+        <div class="flex-item" style="text-align: center;">item2</div>
+        <div class="flex-item" style="text-align: center;">item3</div>
+        <div class="flex-item" style="text-align: center;">item4</div>
+        <div class="flex-item" style="text-align: center;">item5</div>
+        <div class="flex-item" style="text-align: center;">item6</div>
+        <div class="flex-item" style="text-align: center;">item7</div>
+        <div class="flex-item" style="text-align: center;">item8</div>
+        <div class="flex-item" style="text-align: center;">item9</div>
+        <div class="flex-item" style="text-align: center;">item10</div>
+        <div class="flex-item" style="text-align: center;">item1</div>
+        <div class="flex-item" style="text-align: center;">item2</div>
+        <div class="flex-item" style="text-align: center;">item3</div>
+        <div class="flex-item" style="text-align: center;">item4</div>
+        <div class="flex-item" style="text-align: center;">item5</div>
+        <div class="flex-item" style="text-align: center;">item6</div>
+        <div class="flex-item" style="text-align: center;">item7</div>
+        <div class="flex-item" style="text-align: center;">item8</div>
+        <div class="flex-item" style="text-align: center;">item9</div>
+        <div class="flex-item" style="text-align: center;">item10</div>
+        <div class="flex-item" style="text-align: center;">item1</div>
+        <div class="flex-item" style="text-align: center;">item2</div>
+        <div class="flex-item" style="text-align: center;">item3</div>
+        <div class="flex-item" style="text-align: center;">item4</div>
+        <div class="flex-item" style="text-align: center;">item5</div>
+        <div class="flex-item" style="text-align: center;">item6</div>
+        <div class="flex-item" style="text-align: center;">item7</div>
+        <div class="flex-item" style="text-align: center;">item8</div>
+        <div class="flex-item" style="text-align: center;">item9</div>
+        <div class="flex-item" style="text-align: center;">item10</div>
+        <div class="flex-item" style="text-align: center;">item1</div>
+        <div class="flex-item" style="text-align: center;">item2</div>
+        <div class="flex-item" style="text-align: center;">item3</div>
+        <div class="flex-item" style="text-align: center;">item4</div>
+        <div class="flex-item" style="text-align: center;">item5</div>
+        <div class="flex-item" style="text-align: center;">item6</div>
+        <div class="flex-item" style="text-align: center;">item7</div>
+        <div class="flex-item" style="text-align: center;">item8</div>
+        <div class="flex-item" style="text-align: center;">item9</div>
+        <div class="flex-item" style="text-align: center;">item10</div>
+        <div class="flex-item" style="text-align: center;">item1</div>
+        <div class="flex-item" style="text-align: center;">item2</div>
+        <div class="flex-item" style="text-align: center;">item3</div>
+        <div class="flex-item" style="text-align: center;">item4</div>
+        <div class="flex-item" style="text-align: center;">item5</div>
+        <div class="flex-item" style="text-align: center;">item6</div>
+        <div class="flex-item" style="text-align: center;">item7</div>
+        <div class="flex-item" style="text-align: center;">item8</div>
+        <div class="flex-item" style="text-align: center;">item9</div>
+        <div class="flex-item" style="text-align: center;">item10</div>
+        <div class="flex-item" style="text-align: center;">item1</div>
+        <div class="flex-item" style="text-align: center;">item2</div>
+        <div class="flex-item" style="text-align: center;">item3</div>
+        <div class="flex-item" style="text-align: center;">item4</div>
+        <div class="flex-item" style="text-align: center;">item5</div>
+        <div class="flex-item" style="text-align: center;">item6</div>
+        <div class="flex-item" style="text-align: center;">item7</div>
+        <div class="flex-item" style="text-align: center;">item8</div>
+        <div class="flex-item" style="text-align: center;">item9</div>
+        <div class="flex-item" style="text-align: center;">item10</div>
+        <div class="flex-item" style="text-align: center;">item1</div>
+        <div class="flex-item" style="text-align: center;">item2</div>
+        <div class="flex-item" style="text-align: center;">item3</div>
+        <div class="flex-item" style="text-align: center;">item4</div>
+        <div class="flex-item" style="text-align: center;">item5</div>
+        <div class="flex-item" style="text-align: center;">item6</div>
+        <div class="flex-item" style="text-align: center;">item7</div>
+        <div class="flex-item" style="text-align: center;">item8</div>
+        <div class="flex-item" style="text-align: center;">item9</div>
+        <div class="flex-item" style="text-align: center;">item10</div>
+        <div class="flex-item" style="text-align: center;">item1</div>
+        <div class="flex-item" style="text-align: center;">item2</div>
+        <div class="flex-item" style="text-align: center;">item3</div>
+        <div class="flex-item" style="text-align: center;">item4</div>
+        <div class="flex-item" style="text-align: center;">item5</div>
+        <div class="flex-item" style="text-align: center;">item6</div>
+        <div class="flex-item" style="text-align: center;">item7</div>
+        <div class="flex-item" style="text-align: center;">item8</div>
+        <div class="flex-item" style="text-align: center;">item9</div>
+        <div class="flex-item" style="text-align: center;">item10</div>   
+        <div class="flex-item" style="text-align: center;">item1</div>
+        <div class="flex-item" style="text-align: center;">item2</div>
+        <div class="flex-item" style="text-align: center;">item3</div>
+        <div class="flex-item" style="text-align: center;">item4</div>
+        <div class="flex-item" style="text-align: center;">item5</div>
+        <div class="flex-item" style="text-align: center;">item6</div>
+        <div class="flex-item" style="text-align: center;">item7</div>
+        <div class="flex-item" style="text-align: center;">item8</div>
+        <div class="flex-item" style="text-align: center;">item9</div>
+        <div class="flex-item" style="text-align: center;">item10</div>
+        <div class="flex-item" style="text-align: center;">item1</div>
+        <div class="flex-item" style="text-align: center;">item2</div>
+        <div class="flex-item" style="text-align: center;">item3</div>
+        <div class="flex-item" style="text-align: center;">item4</div>
+        <div class="flex-item" style="text-align: center;">item5</div>
+        <div class="flex-item" style="text-align: center;">item6</div>
+        <div class="flex-item" style="text-align: center;">item7</div>
+        <div class="flex-item" style="text-align: center;">item8</div>
+        <div class="flex-item" style="text-align: center;">item9</div>
+        <div class="flex-item" style="text-align: center;">item10</div>   
+        <div class="flex-item" style="text-align: center;">item1</div>
+        <div class="flex-item" style="text-align: center;">item2</div>
+        <div class="flex-item" style="text-align: center;">item3</div>
+        <div class="flex-item" style="text-align: center;">item4</div>
+        <div class="flex-item" style="text-align: center;">item5</div>
+        <div class="flex-item" style="text-align: center;">item6</div>
+        <div class="flex-item" style="text-align: center;">item7</div>
+        <div class="flex-item" style="text-align: center;">item8</div>
+        <div class="flex-item" style="text-align: center;">item9</div>
+        <div class="flex-item" style="text-align: center;">item10</div>
+        <div class="flex-item" style="text-align: center;">item1</div>
+        <div class="flex-item" style="text-align: center;">item2</div>
+        <div class="flex-item" style="text-align: center;">item3</div>
+        <div class="flex-item" style="text-align: center;">item4</div>
+        <div class="flex-item" style="text-align: center;">item5</div>
+        <div class="flex-item" style="text-align: center;">item6</div>
+        <div class="flex-item" style="text-align: center;">item7</div>
+        <div class="flex-item" style="text-align: center;">item8</div>
+        <div class="flex-item" style="text-align: center;">item9</div>
+        <div class="flex-item" style="text-align: center;">item10</div>   
+        <div class="flex-item" style="text-align: center;">item1</div>
+        <div class="flex-item" style="text-align: center;">item2</div>
+        <div class="flex-item" style="text-align: center;">item3</div>
+        <div class="flex-item" style="text-align: center;">item4</div>
+        <div class="flex-item" style="text-align: center;">item5</div>
+        <div class="flex-item" style="text-align: center;">item6</div>
+        <div class="flex-item" style="text-align: center;">item7</div>
+        <div class="flex-item" style="text-align: center;">item8</div>
+        <div class="flex-item" style="text-align: center;">item9</div>
+        <div class="flex-item" style="text-align: center;">item10</div>
+        <div class="flex-item" style="text-align: center;">item1</div>
+        <div class="flex-item" style="text-align: center;">item2</div>
+        <div class="flex-item" style="text-align: center;">item3</div>
+        <div class="flex-item" style="text-align: center;">item4</div>
+        <div class="flex-item" style="text-align: center;">item5</div>
+        <div class="flex-item" style="text-align: center;">item6</div>
+        <div class="flex-item" style="text-align: center;">item7</div>
+        <div class="flex-item" style="text-align: center;">item8</div>
+        <div class="flex-item" style="text-align: center;">item9</div>
+        <div class="flex-item" style="text-align: center;">item10</div>   
+        <div class="flex-item" style="text-align: center;">item1</div>
+        <div class="flex-item" style="text-align: center;">item2</div>
+        <div class="flex-item" style="text-align: center;">item3</div>
+        <div class="flex-item" style="text-align: center;">item4</div>
+        <div class="flex-item" style="text-align: center;">item5</div>
+        <div class="flex-item" style="text-align: center;">item6</div>
+        <div class="flex-item" style="text-align: center;">item7</div>
+        <div class="flex-item" style="text-align: center;">item8</div>
+        <div class="flex-item" style="text-align: center;">item9</div>
+        <div class="flex-item" style="text-align: center;">item10</div>
+        <div class="flex-item" style="text-align: center;">item1</div>
+        <div class="flex-item" style="text-align: center;">item2</div>
+        <div class="flex-item" style="text-align: center;">item3</div>
+        <div class="flex-item" style="text-align: center;">item4</div>
+        <div class="flex-item" style="text-align: center;">item5</div>
+        <div class="flex-item" style="text-align: center;">item6</div>
+        <div class="flex-item" style="text-align: center;">item7</div>
+        <div class="flex-item" style="text-align: center;">item8</div>
+        <div class="flex-item" style="text-align: center;">item9</div>
+        <div class="flex-item" style="text-align: center;">item10</div>  
+        <div class="flex-item" style="text-align: center;">item1</div>
+        <div class="flex-item" style="text-align: center;">item2</div>
+        <div class="flex-item" style="text-align: center;">item3</div>
+        <div class="flex-item" style="text-align: center;">item4</div>
+        <div class="flex-item" style="text-align: center;">item5</div>
+        <div class="flex-item" style="text-align: center;">item6</div>
+        <div class="flex-item" style="text-align: center;">item7</div>
+        <div class="flex-item" style="text-align: center;">item8</div>
+        <div class="flex-item" style="text-align: center;">item9</div>
+        <div class="flex-item" style="text-align: center;">item10</div>
+        <div class="flex-item" style="text-align: center;">item1</div>
+        <div class="flex-item" style="text-align: center;">item2</div>
+        <div class="flex-item" style="text-align: center;">item3</div>
+        <div class="flex-item" style="text-align: center;">item4</div>
+        <div class="flex-item" style="text-align: center;">item5</div>
+        <div class="flex-item" style="text-align: center;">item6</div>
+        <div class="flex-item" style="text-align: center;">item7</div>
+        <div class="flex-item" style="text-align: center;">item8</div>
+        <div class="flex-item" style="text-align: center;">item9</div>
+        <div class="flex-item" style="text-align: center;">item10</div>   
+        <div class="flex-item" style="text-align: center;">item1</div>
+        <div class="flex-item" style="text-align: center;">item2</div>
+        <div class="flex-item" style="text-align: center;">item3</div>
+        <div class="flex-item" style="text-align: center;">item4</div>
+        <div class="flex-item" style="text-align: center;">item5</div>
+        <div class="flex-item" style="text-align: center;">item6</div>
+        <div class="flex-item" style="text-align: center;">item7</div>
+        <div class="flex-item" style="text-align: center;">item8</div>
+        <div class="flex-item" style="text-align: center;">item9</div>
+        <div class="flex-item" style="text-align: center;">item10</div>
+        <div class="flex-item" style="text-align: center;">item1</div>
+        <div class="flex-item" style="text-align: center;">item2</div>
+        <div class="flex-item" style="text-align: center;">item3</div>
+        <div class="flex-item" style="text-align: center;">item4</div>
+        <div class="flex-item" style="text-align: center;">item5</div>
+        <div class="flex-item" style="text-align: center;">item6</div>
+        <div class="flex-item" style="text-align: center;">item7</div>
+        <div class="flex-item" style="text-align: center;">item8</div>
+        <div class="flex-item" style="text-align: center;">item9</div>
+        <div class="flex-item" style="text-align: center;">item10</div>
+    </div>
+    <div class="returnTop" id="btn">
+        <a>返回顶部</a>
+    </div>
+    <script>
+        var btn = document.querySelector("#btn")
+
+        btn.addEventListener("click", function(){
+            var timer = setInterval(function(){
+                document.documentElement.scrollTop -= 50;
+                // 如果到顶部了就停止Interval
+                if (document.documentElement.scrollTop < 1){
+                    // 执行设置表关
+                    clearInterval(timer)
+                }
+            })
+        });
+    </script>
+</body>
+</html>
