@@ -20,26 +20,26 @@
 
         // 普通函数定义
         function funcName(params) {
-            var state = "函数内代码块";
+            let state = "函数内代码块";
 
             return state;
         }
 
         // 函数表达式定义
-        var funcName = function (a, b) {
-            var result = a + b;
+        let funcName = function (a, b) {
+            let result = a + b;
 
             return result;
         }
 
-        var result = funcName(1, 4);
+        let result = funcName(1, 4);
 
         // Function() 构造函数
-        var funcName = new Function("a", "b", "return a + b")
+        let funcName = new Function("a", "b", "return a + b")
 
         // 自调用函数
         (function(a, b){
-            var result = a + b;
+            let result = a + b;
         })()
 
         // 箭头函数

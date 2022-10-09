@@ -43,32 +43,32 @@
         // 操作元素
 
         // 一.改变元素内容: element.innerText/element.innerHTML
-        var btn = document.querySelector("button");
-        var div = document.querySelector("div");
+        let btn = document.querySelector("button");
+        let div = document.querySelector("div");
 
         btn.onclick = function () {
             div.innerText = getDate();
         }
 
         function getDate() {
-            var date = new Date();
-            var year = date.getFullYear();
-            var month = date.getMonth() + 1;
-            var dates = date.getDate();
+            let date = new Date();
+            let year = date.getFullYear();
+            let month = date.getMonth() + 1;
+            let dates = date.getDate();
             arr = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
-            var day = date.getDay();
+            let day = date.getDay();
             return "今天是 " + year + "年 " + month + "月 " + dates + "日 " + arr[day]
         }
 
         // 不注册事件
-        var time = document.querySelector(".test");
+        let time = document.querySelector(".test");
         time.innerText = getDate();
 
         // element.innerText与element.innerHTML的不同
         // 1.innerHTML可以识别html代码
-        var text1 = document.querySelector(".unsame1");
+        let text1 = document.querySelector(".unsame1");
         text1.innerText = "<strong>innerText无法识别html代码</strong>";
-        var text2 = document.querySelector(".unsame2");
+        let text2 = document.querySelector(".unsame2");
         text2.innerHTML = "<strong>innerHTML可以识别html代码</strong>";
         // 2.innerHTML保留空格和换行而innerText不会(其实就是前者把html也显示了，后者只显示内容)
         console.log(text1.innerText);
@@ -77,9 +77,9 @@
 
 
         //二.修改元素属性: 直接调用元素相应的属性 href src title alt等
-        var t1 = document.querySelector("#t1");
-        var t2 = document.querySelector("#t2");
-        var img = document.querySelector("img");
+        let t1 = document.querySelector("#t1");
+        let t2 = document.querySelector("#t2");
+        let img = document.querySelector("img");
         t2.onclick = function () {
             img.src = './turtle.png';
             img.title = "递归探索迷宫";
@@ -91,8 +91,8 @@
 
 
         // 三.修改表单属性: type value checked selected disabled等
-        var btn = document.querySelector("#biaodan");
-        var input = document.querySelector("input");
+        let btn = document.querySelector("#biaodan");
+        let input = document.querySelector("input");
         btn.onclick = function () {
             // input.innerHTML = "被惦记了"; 这个无法修改表单的
             input.value = "被惦记了";
@@ -103,7 +103,7 @@
 
         // 四.修改元素样式: element.style (行内式) element.className (类名样式操作)
         // 1.通过style - 一次修改少量 权重高
-        var pic = document.querySelector("img");
+        let pic = document.querySelector("img");
         pic.onclick = function () {
             // 注意: 修改样式时属性名遵守驼峰命名法
             // 行内样式权重高
@@ -113,7 +113,7 @@
         // 循环精灵图很值得反复回味
 
         // 2.通过className - 一次性修改多个
-        var picc = document.querySelector("#picc");
+        let picc = document.querySelector("#picc");
         picc.onclick = function () {
             this.className = "pcic";
             // 如果要保留原先的类名且也加新的
@@ -127,7 +127,7 @@
 
 
         // 六.节点操作
-        var element = document.querySelector("#pic")
+        let element = document.querySelector("#pic")
 
         element.parentNode //获得父节点
         element.childNodes //获得子节点
@@ -139,7 +139,7 @@
         element.nextElementSibling //获得下一兄弟元素
         element.previousElementSibling //获得上一兄弟元素
 
-        var newNode = document.createElement("div") //创建新元素节点
+        let newNode = document.createElement("div") //创建新元素节点
         element.appendChild(newNode) //element添加自己的子节点
         element.removeChild(newNode) //删除element的子节点
 

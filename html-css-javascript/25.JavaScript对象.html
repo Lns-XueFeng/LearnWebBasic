@@ -13,7 +13,7 @@
         // 在JavaScript中，对象是一组无序的相关属性和方法的集合，所有的事物均是对象，例如，字符串，数值，数组，函数等。
 
         // 创建对象
-        var obj = {
+        let obj = {
             // 属性
             name: "lixue",
             sex: "女",
@@ -37,7 +37,7 @@
         obj.sayWhy()
 
         // 利用new Object创建对象并添加属性和方法
-        var obj = new Object(); // 创建了一个空对象
+        let obj = new Object(); // 创建了一个空对象
         obj.name = "lixue";
         obj.sex = "女";
         obj.age = 18;
@@ -61,8 +61,8 @@
             }
         }
 
-        var ldh = new Star("刘德华", "男", 18);
-        var dlrb = new Star("迪丽热巴", "女", 18);
+        let ldh = new Star("刘德华", "男", 18);
+        let dlrb = new Star("迪丽热巴", "女", 18);
         ldh.wish();
         dlrb.wish();
 
@@ -77,7 +77,7 @@
         // 类似 call() 和 apply() 方法可以将 this 引用到任何对象。
 
         // 遍历对象
-        for (var k in ldh){
+        for (let k in ldh){
             console.log(k);
             console.log(ldh[k]);
         }
@@ -87,11 +87,11 @@
         Math.PI
         Math.max()
 
-        var myMath = {
+        let myMath = {
             PI: 3.141256,
             max: function(){
                 max = arguments[0];
-                for (var i=0; i<arguments.length; i++){
+                for (let i=0; i<arguments.length; i++){
                     if (arguments[i] > max){
                         max = arguments[i];
                     }
@@ -100,7 +100,7 @@
             },
             min: function(){
                 min = arguments[0];
-                for (var i=0; i<arguments.length; i++){
+                for (let i=0; i<arguments.length; i++){
                     if (arguments[i] < min){
                         min = arguments[i];
                     }
@@ -122,7 +122,7 @@
         Math.random()
 
         // Date: 是一个构造函数，需要new一下
-        var date = new Date()
+        let date = new Date()
         alert(date)
 
         

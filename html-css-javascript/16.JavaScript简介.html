@@ -18,7 +18,6 @@
         <input type="text" name="input" id="input">
     </div>
 
-
     <script>
         // 注：JavaScript教程手册 - https://wangdoc.com/javascript/
         // 注：JavaScript查询手册 - MDN - https://developer.mozilla.org/zh-CN/
@@ -43,7 +42,7 @@
     
         // 四、验证输入
         function myFunction(){
-            var value = document.getElementById('input').value;
+            let value = document.getElementById('input').value;
             if(value == ""||isNaN(value)){
                 alert("不是数字，请输入数字。")
             }

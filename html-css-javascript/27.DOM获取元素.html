@@ -42,49 +42,49 @@
         // 获取元素: 可通过ID/标签名/H5的新方法/特殊元素来获取
 
         // 1.通过ID来获取元素: 使用getElementById()方法可以获取带有ID的元素对象
-        var first = document.getElementById("first"); // 直接获取到id为first的整个标签对象
+        let first = document.getElementById("first"); // 直接获取到id为first的整个标签对象
         console.log(first); // 返回<div id="first">第一个被操作的元素</div>
         console.log(typeof first) // object
         console.dir(first) // 打印返回的元素对象，更好的查看相应的对象方法
-        var second = document.getElementById("second") // null，没有找到这个id的元素
+        let second = document.getElementById("second") // null，没有找到这个id的元素
         console.log(second); // 返回null
 
 
         // 2.通过标签名获取元素: 使用getElementsTagName()方法可以返回带有指定标签名的对象集合(不管怎么样，总是返回伪数组)
-        var lis = document.getElementsByTagName("li");
+        let lis = document.getElementsByTagName("li");
         console.log(lis);
         console.log(lis[0]); // 得到第一个li
-        for (var i in lis){
+        for (let i in lis){
             console.log(lis[i]); // 循环遍历输出li
         }
         // element.getElementsTagName() 获取某元素中的某标签元素
         // 为了解决获取第二段的li而不获取第一段的li
-        var ol = document.getElementsByTagName('ol')
+        let ol = document.getElementsByTagName('ol')
         console.log(ol[0].getElementsByTagName("li"))
-        var ol = document.getElementById("oid")
+        let ol = document.getElementById("oid")
         console.log(ol.getElementsByTagName("li"))
 
 
         // H5新增的...
         // 3.通过类名来获取元素(类名可能一个可能多个，因此返回的是一个集合)
-        var box = document.getElementsByClassName("box")
+        let box = document.getElementsByClassName("box")
 
         // 4.通过选择器来直接获取(document.querySelector()返回指定选择器的第一个元素)
-        var box = document.querySelector(".box");
-        var first = document.querySelector("#first");
-        var li = document.querySelector("li"); // 返回第一个li
+        let box = document.querySelector(".box");
+        let first = document.querySelector("#first");
+        let li = document.querySelector("li"); // 返回第一个li
 
         // 5.querySelectorAll()(返回指定选择器的所有元素)这个补全上面的，利用选择器选择多个标签，返回一个集合
-        var boxes = document.querySelectorAll(".box");
+        let boxes = document.querySelectorAll(".box");
 
 
         // 6.获取特殊标签，html和body
 
         // 获取body元素
-        var bodyEle = document.body;
+        let bodyEle = document.body;
         console.log(bodyEle);
         // 获取HTML元素
-        var HtmlEle = document.documentElement;
+        let HtmlEle = document.documentElement;
         console.log(HtmlEle)
 
     </script>
