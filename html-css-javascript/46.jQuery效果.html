@@ -53,7 +53,7 @@
     <script>
         // 1.显示与隐藏: show()、hide()、toggle()
         $(".btn1 button").click(function(){
-            var index = $(this).index();
+            let index = $(this).index();
             if(index == 0){
                 $(".cls1").show(500, "linear", function(){
                     alert("此动画已经完成，调用回调函数")
@@ -73,7 +73,7 @@
 
         // 2.滑入与滑出: slideDown()、slideUp()、slideToggle()
         $(".btn2 button").click(function(){
-            var index = $(this).index();
+            let index = $(this).index();
             if(index == 0){
                 $(".cls2").slideDown(500, "linear", function(){
                     alert("此动画已经完成，调用回调函数")
@@ -93,7 +93,7 @@
 
         // 3.淡入与淡出: fadeIn()、fadeOut()、fadeToggle()、fadeTo()
         $(".btn3 button").click(function(){
-            var index = $(this).index();
+            let index = $(this).index();
             if(index == 0){
                 $(".cls3").fadeIn(500, function(){
                     alert("此动画已经完成，调用回调函数")
@@ -113,7 +113,7 @@
 
         // 停止动画排队：在动画效果方法前加上stop()方法
         $(".btn4 button").click(function(){
-            var index = $(this).index();
+            let index = $(this).index();
             if(index == 0){
                 $(".cls4").stop().fadeIn(500, function(){
                     alert("此动画已经完成，调用回调函数")

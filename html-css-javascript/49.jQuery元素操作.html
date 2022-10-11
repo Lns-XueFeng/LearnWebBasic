@@ -14,7 +14,7 @@
     
     <script>
         // 1.使用each方法遍历元素（类似for循环）
-        var arr = ["red", "green", "blue"];
+        let arr = ["red", "green", "blue"];
         $("div").each(function(index, domEle){
             console.log(index); 
             $(domEle).css("background", arr[index]);
@@ -22,11 +22,11 @@
         })
 
         // 2.选取元素，注意：返回的是DOM对象，和eq很像，但eq返回的是jQuery对象
-        var domVar = $("div").get(0);
+        let domVar = $("div").get(0);
         console.log(domVar);
 
         // 3.返回元素相对的索引：index方法
-        var inde = $(".ind").index("div")
+        let inde = $(".ind").index("div")
         console.log(inde);
 
         // 更多见https://jquery.cuishifeng.cn/length.html

@@ -15,17 +15,17 @@
 
     <script>
         // 1.获取固有属性值：element.prop("属性名");
-        var att = $("a").prop("href");
+        let att = $("a").prop("href");
         console.log(att);
         $("input").change(function(){
-            var att = $("input").prop("checked");
+            let att = $("input").prop("checked");
             console.log(att);
         })
 
         // removeProp(name)
 
         // 2.获取自定义属性值：element.attr("自定义属性名"); element.attr("自定义属性名", "要修改的值")
-        var att = $("span").attr("index");
+        let att = $("span").attr("index");
         console.log(att);
         $("span").attr("index", "10");
         console.log($("span").attr("index"));

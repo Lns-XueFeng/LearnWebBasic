@@ -28,14 +28,14 @@
         $(".ex");   // 类选择器
         $("#ex");   // id选择器
         
-        var dom_obj = document.querySelector(".ex");
-        var jq_obj = $(dom_obj);   // 将dom对象转换为jQuery对象
+        let dom_obj = document.querySelector(".ex");
+        let jq_obj = $(dom_obj);   // 将dom对象转换为jQuery对象
 
         // 更多选择器知识见https://jquery.cuishifeng.cn/
 
 
         // 2.jQuery方法：在jQuery选择某个元素后对其进行的某些操作
-        var str = $("div:eq(2)").text();
+        let str = $("div:eq(2)").text();
         console.log(str);
         color = str.css("color");
         console.log(color);
@@ -53,7 +53,7 @@
             // ......
         });
 
-        var fuc = function(e){
+        let fuc = function(e){
             // ......
             e.pageX;
             e.pageY;
@@ -78,10 +78,10 @@
 
 
         // 4.jQuery动画：通过jQuery很简单的实现一些交互效果
-        var div = $('#test-show-hide');
+        let div = $('#test-show-hide');
         div.hide(3000); // 在3秒钟内逐渐消失
 
-        var div = $('#test-slide');
+        let div = $('#test-slide');
         div.slideUp(3000); // 在3秒钟内逐渐向上消失
 
         // 更多动画效果见https://jquery.cuishifeng.cn/
