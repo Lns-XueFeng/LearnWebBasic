@@ -260,10 +260,10 @@
         <a>返回顶部</a>
     </div>
     <script>
-        var btn = document.querySelector("#btn")
+        let btn = document.querySelector("#btn")
 
         btn.addEventListener("click", function(){
-            var timer = setInterval(function(){
+            let timer = setInterval(function(){
                 document.documentElement.scrollTop -= 50;
                 // 如果到顶部了就停止Interval
                 if (document.documentElement.scrollTop < 1){
