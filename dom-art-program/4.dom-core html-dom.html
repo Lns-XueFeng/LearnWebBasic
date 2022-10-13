@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        分清DOM core 以及 HTML dom 很重要
+
+        在前面用到的获取元素的方法, 比如下面的方法, 都是DOM Core的组成部分.
+        它们并不属于JavaScript, 而是只要是支持DOM的任何一种程序语言均可使用.
+        它们的用途也绝非仅仅是处理网页, 它们可以用来处理用任何一种标记语言编写出来的文档.
+        document.getElementById("#example");
+        document.getElementsByTagName("tagName");
+        document.getElementsByClassName(".example");
+        document.querySelector("selector");
+        document.querySelectorAll("selector");
+
+        而像之前所使用的onclick这样的事件处理属性, 其属于HTML DOM.
+        比如获取元素, document.getElementsByTagName("p"); == document.p;
+        比如获取属性, element.getAttribute("src"); == element.src;
+        其中后者均为HTML DOM的属性/方法
+        HTML DOM通常比较短, 它是特化的dom, 只能拿来处理web文档, 而DOM Core更为通用.
+    </p>
+    <img src="ppp" alt="">
+    <script>
+        document.getElementsByTagName("p");
+        document.p
+        document.getElementsByTagName("img")[0].getAttribute("src")
+        document.getElementsByTagName("img")[0].src
+    </script>
+</body>
+</html>

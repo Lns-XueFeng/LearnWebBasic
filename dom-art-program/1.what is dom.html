@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        JavaScript DOM是一组API, 其提供访问, 操作html节点元素的能力.
+        DOM是通过将html转换为一个document文档对象来定义各种API操作.
+        当创建了一个网页并将其加载到web浏览器时, DOM就在幕后悄然而生, 它把你编写的网页文档转换为一个文档对象.
+
+        具体的, DOM将html文档表示为一个节点树, 通过访问树上的节点来达到操作html的目的.
+        每一个节点也是一个对象, 通过访问/操作其属性或调用相关方法实现操控.
+    </p>
+    <script>
+        // document对象->访问节点方法
+        document.getElementById("#example");
+        document.getElementsByTagName("tagName");
+        document.getElementsByClassName(".example");
+        document.querySelector("selector");
+        document.querySelectorAll("selector");
+
+        // 具体节点对象属性/方法
+        document.head.children;
+        document.body.childNodes;
+
+        let element = document.getElementById("#example");
+        element.getAttribute("attributeName");
+        element.setAttribute("attributeNmme", "setValue");
+        element.childNodes;
+        element.nodeType;
+        element.nodeValue;
+        element.firstChild;
+        element.lastChild;
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        在编写网站代码时, 分为三个层(结构-表示-行为)分别对应着html-css-js.
+        html定义与组件整个网站页面的结构骨架与核心内容.
+        css则是美化外观, 构建合理的布局, 给网页穿上新衣.
+        js以及dom专注于行为, 为网站添加生动的交互以及更多的功能.
+
+        在使用dom为网站添加交互的基本步骤便是, 获取相应节点元素, 操作元素.
+        还可以利用dom获取元素属性, 改变其元素属性, 改变其样式等
+        通过事件, 便可以达到当用户触发某元素时, 其绑定的相应事件被触发而产生一系列的交互.
+    </p>
+    <script>
+        // 利用dom编程的一般步骤
+        let pElement = document.querySelector("p");   // 获取节点元素
+        pElement.style.color = "red";   // 操作元素
+        pElement.setAttribute("trySet", "setValue");   // 操作元素
+        console.log(pElement.getAttribute("trySet"));   // 操作元素
+
+        // 给元素添加事件
+        pElement.onmouseover = function (){
+            this.style.backgroundColor = "pink";
+        }
+        pElement.onmouseout = function (){
+            this.style.backgroundColor = "white";
+        }
+    </script>
+</body>
+</html>

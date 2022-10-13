@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .pstyle{
+            color: #5788fe;
+        }
+
+        .pStyleReplace{
+            color: #fe5757;
+        }
+    </style>
+</head>
+<body>
+    <p class="pstyle">
+        CSS-DOM：即利用dom操作css样式, 其中分为直接操作与改变类名操作
+            直接操作一般来说并不推荐
+            改变类名操作比较推荐, 因为这样不会将css代码混入html之中
+    </p>
+    <script>
+        // 直接操作
+        let pEle1 = document.querySelector("p");
+        pEle1.style.color = "red";
+
+        // 改变类名
+        let pEle2 = document.querySelector("p");
+        pEle2.className = ".pStyleReplace"
+    </script>
+</body>
+</html>

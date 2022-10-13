@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        在使用js dom做交互时, 最经常需要干的一件事情便是去动态的创建/添加/删除节点元素
+        最经常使用的dom 方法为：
+            document.write方法
+            document.innerHTML属性
+            createElement方法
+            createTextNode方法
+            appendChild方法
+            insertBefore方法
+
+        其中值得注意的是：你所用dom创建的元素还只是JavaScript世界中的孤儿,
+        你需要将其添加/插入到节点树之中才能呈现在浏览器窗口之中
+
+
+        另外还有一种技术, 可在不刷新窗口的情况下进行部分数据的更新, 即AJAX.
+        AJAX其核心原理是：在浏览器与服务器的通信之中充当中间人的角色,
+        当触发相应的事件时, 仅仅用js中的ajax相应部分的代码发起对服务器的请求,
+        而不需要再用浏览器对服务器进行数据请求而造成一次页面的刷新.
+
+        发起这个请求的便是XMLHttpRequest对象, 然后进行相关的响应处理.
+    </p>
+    <script>
+        function ajaxExample(){
+            let request = new XMLHttpRequest()   // 实例化XMLHttpRequest对象
+            if (request){
+                request.open("GET", "example.txt", true);   // 指定将要访问的文件以及请求类型, true表示异步请求
+                request.onreadystatechange = function (){   // 事件处理函数：在服务器给XMLHttpRequest对象送回响应的时候被触发执行
+                    // 在服务器给XMLHttpRequest对象送回响应的时, 浏览器会在不同的阶段更新readyState属性的值(01234分别代表着不同的阶段)
+                    if (request.readyState === 4){   // 当发送回的响应完成时, readyState为4
+                        // do something
+                    }
+                }
+                request.send(null)   // 发送请求, null表示此次无数据, 如果请求为POST便需要发送数据
+            }
+        }
+        // 上面的是非常简单的情况, 实际运用时可额外增加一些判断用于防止程序出错
+    </script>
+</body>
+</html>
