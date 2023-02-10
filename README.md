@@ -1,3 +1,3 @@
-# HTML-CSS-JS
+# LearnWebBasic
 
-## To record notes of Web
+### To learn the basci of web. 
